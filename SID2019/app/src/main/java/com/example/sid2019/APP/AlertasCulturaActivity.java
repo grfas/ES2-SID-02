@@ -32,7 +32,7 @@ public class AlertasCulturaActivity extends AppCompatActivity {
     private static final String PORT = UserLogin.getInstance().getPort();
     private static final String username= UserLogin.getInstance().getUsername();
     private static final String password = UserLogin.getInstance().getPassword();
-    DatabaseHandler db = new DatabaseHandler(this);
+    DatabaseHandler db = new DatabaseHandler(this);    
     String getAlertasCultura = "http://" + IP + ":" + PORT + "/scripts/getAlertasCultura.php";
     String getInformacaoCultura = "http://" + IP + ":" + PORT + "/scripts/getInformacaoCultura.php";
     int year;
