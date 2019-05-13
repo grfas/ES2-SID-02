@@ -1,10 +1,15 @@
 package Investigador;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Auditor.Aud_Gestao_SID;
+
 import java.awt.CardLayout;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -12,27 +17,23 @@ import java.awt.Color;
 public class Inv_Gestao extends JFrame {
 
 	private JPanel contentPane;
-
+	private Investigador inv;
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Inv_Gestao frame = new Inv_Gestao();
-					frame.setVisible(true);
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public Inv_Gestao() {
+	public Inv_Gestao(Investigador inv) {
+		this.inv = inv;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -48,5 +49,27 @@ public class Inv_Gestao extends JFrame {
 		JButton btnGestaoDeCultura = new JButton("Gestao de Cultura");
 		btnGestaoDeCultura.setBounds(134, 144, 123, 57);
 		contentPane.add(btnGestaoDeCultura);
+		
+		btnGestaoDePerfil.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Inv_Gestao_Perfil gestaoInv = new Inv_Gestao_Perfil();
+				gestaoInv.run();
+
+			}
+		});
+		
+		btnGestaoDeCultura.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Inv_Gestao_Cultura gestaoInv = new Inv_Gestao_Cultura(inv);
+				gestaoInv.run();
+
+			}
+		});
+
+		
 	}
 }

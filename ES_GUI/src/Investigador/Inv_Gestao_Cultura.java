@@ -1,52 +1,50 @@
 package Investigador;
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.ArrayList;
+
 import javax.swing.JButton;
 import javax.swing.JTextField;
-import java.awt.Color;
 
 public class Inv_Gestao_Cultura extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
+	private Investigador inv;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+
 			public void run() {
 				try {
-					Inv_Gestao_Cultura frame = new Inv_Gestao_Cultura();
-					frame.setVisible(true);
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public Inv_Gestao_Cultura() {
+	public Inv_Gestao_Cultura(Investigador inv) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JComboBox comboBox = new JComboBox();
+		for(Cultura c : inv.culturas) {
+			comboBox.addItem(Integer.toString(c.getId_cultura()));
+		}
+		
 		comboBox.setBounds(64, 34, 70, 26);
 		contentPane.add(comboBox);
 		
@@ -56,6 +54,14 @@ public class Inv_Gestao_Cultura extends JFrame {
 		contentPane.add(lblCultura);
 		
 		JComboBox comboBox_1 = new JComboBox();
+		ArrayList<String> variaveisPossiveis = new ArrayList<>(); 
+		for(Medicoes m : inv.lista) {
+			if(!variaveisPossiveis.contains(Integer.toString(m.getId_variavel()))){
+				variaveisPossiveis.add(Integer.toString(m.getId_variavel()));
+				comboBox_1.addItem(Integer.toString(m.getId_variavel()));
+			}
+			
+		}
 		comboBox_1.setBounds(64, 92, 70, 26);
 		contentPane.add(comboBox_1);
 		
@@ -97,10 +103,7 @@ public class Inv_Gestao_Cultura extends JFrame {
 		btnInserir.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnInserir.setBounds(94, 355, 89, 23);
 		contentPane.add(btnInserir);
-		
-		JButton btnSair = new JButton("Sair");
-		btnSair.setBounds(340, 406, 89, 23);
-		contentPane.add(btnSair);
+
 	}
 
 }
