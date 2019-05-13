@@ -18,6 +18,7 @@ public class Investigador {
 	private Inv_Gestao inv;
 	public ArrayList<Cultura> culturas = new ArrayList<Cultura>();
 	public ArrayList<Medicoes> lista = new ArrayList<Medicoes>();
+	public ArrayList<Integer> listaVariaveis = new ArrayList<Integer>();
 
 	public Investigador(String username, String password, Connection con) {
 		this.username = username;
@@ -80,6 +81,9 @@ public class Investigador {
 			if (!lista.isEmpty()) {
 				lista.clear();
 			}
+			if (!listaVariaveis.isEmpty()) {
+				listaVariaveis.clear();
+			}
 			Statement st2 = con.createStatement();
 			for (Cultura c : culturas) {
 				String query = "SELECT * FROM medicoes WHERE id_cultura = " + c.getId_cultura();
@@ -96,8 +100,15 @@ public class Investigador {
 						lista.add(new Medicoes(numero, data, valor_medicao, idcultura, idvariavel));
 					}
 				}
+				String query1 = "SELECT * FROM variaveis_medidas WHERE id_cultura = " + c.getId_cultura();
+				ResultSet rs1 = st2.executeQuery(query1);
+				while (rs1.next()) {
+					if (!rs1.wasNull()) {
+						int numero = rs1.getInt("id_variavel");
+						listaVariaveis.add(numero);
+					}
+				}
 			}
-
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();

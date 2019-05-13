@@ -110,7 +110,7 @@ public class Inv_Gestao_Cultura_Pesquisa extends JFrame {
 
 	private void atualizaListaMedicoes() {
 		for (Medicoes val : inv.lista) {
-			listaMedicoes.addElement(Integer.toString(val.getNumero_medicao()) + "    " + val.getData().toString() + "    " + Integer.toString(val.getId_cultura()) + "    "
+			listaMedicoes.addElement(Integer.toString(val.getNumero_medicao()) + "    " + val.getData().toString() + "    " + Integer.toString(val.getValor_medicao()) + "    " + Integer.toString(val.getId_cultura()) + "    "
 					+ Integer.toString(val.getId_variavel()));
 
 		}

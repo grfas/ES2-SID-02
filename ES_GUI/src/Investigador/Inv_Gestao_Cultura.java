@@ -67,10 +67,10 @@ public class Inv_Gestao_Cultura extends JFrame {
 		JComboBox<String> comboBox_1 = new JComboBox<String>();
 		comboBox_1.addItem("   ");
 		ArrayList<String> variaveisPossiveis = new ArrayList<>();
-		for (Medicoes m : inv.lista) {
-			if (!variaveisPossiveis.contains(Integer.toString(m.getId_variavel()))) {
-				variaveisPossiveis.add(Integer.toString(m.getId_variavel()));
-				comboBox_1.addItem(Integer.toString(m.getId_variavel()));
+		for (Integer m : inv.listaVariaveis) {
+			if (!variaveisPossiveis.contains(Integer.toString(m))) {
+				variaveisPossiveis.add(Integer.toString(m));
+				comboBox_1.addItem(Integer.toString(m));
 			}
 
 		}
@@ -158,7 +158,7 @@ public class Inv_Gestao_Cultura extends JFrame {
 			public void actionPerformed(ActionEvent e) {		
 				try {
 					int c = Integer.parseInt((String) comboBox.getSelectedItem());
-					int v = Integer.parseInt(JOptionPane.showInputDialog("Qual a variavel?"));
+					int v = Integer.parseInt((String) comboBox_1.getSelectedItem());;
 					int valor = Integer.parseInt(textField.getText());
 					String tempo = textField_1.getText();
 					DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
