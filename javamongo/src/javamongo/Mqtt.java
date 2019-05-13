@@ -113,26 +113,33 @@ public class Mqtt implements MqttCallback {
 			if (parts.length == 5) {
 				System.out.println(parts.length);
 				String a = parts[0];
+				System.out.println("a");
 				String b = parts[1];
+				System.out.println("b");
 				String c = parts[2];
 				String d = parts[3];
 				String e = parts[4];
 
 				wr.insert(a, b, c, d, e);
 
-			} else {
+			} else if(!(parts.length==5)){
+				
 				
 				String cell = " 'cell':0";
 				String a = parts[0];
-				String b = parts[1];
-				String c = parts[2];
-				String d = parts[3];
-				String e = parts[4];
 				
-				String concat=cell.concat(e);
-				System.out.println(concat);
-
-				wr.insert(a, b, c, d, concat);
+				String b = parts[1];
+				
+				String c = parts[2];
+				
+				String d = parts[3];
+				
+				
+				
+				String concat=null;
+				
+				System.out.println("1");
+				wr.insert(a, b, c, d, cell);
 
 			}
 
