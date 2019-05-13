@@ -41,11 +41,11 @@ public class User {
 			}
 
 			if (this.permissao.equals("auditor")) {
-				new Auditor.Auditor(username, password, permissao, login, con);
+				new Auditor.Auditor(username, password, con);
 			}
 
 			else if (this.permissao.equals("investigador")) {
-
+				new Investigador.Investigador(username, password, con);
 			}
 
 			else if (this.permissao.equals("inativo")) {

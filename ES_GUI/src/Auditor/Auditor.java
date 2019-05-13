@@ -13,26 +13,14 @@ import javax.swing.JFrame;
 
 public class Auditor {
 
-	private Connection con;
-	private Statement st;
-	private ResultSet rs;
-	private Connection con2;
-	private Statement st2;
-	private ResultSet rs2;
 	private ArrayList<Log> lista = new ArrayList<Log>();
-	private JFrame login;
-
 	private String username;
 	private String password;
-	private String permissao;
 	private Aud_Gestao aud;
 
-	public Auditor(String username, String password, String permissao, JFrame login, Connection con) {
+	public Auditor(String username, String password, Connection con) {
 		this.username = username;
 		this.password = password;
-		this.login = login;
-		this.permissao = permissao;
-		this.con = con;
 		this.aud = new Aud_Gestao(this);
 		aud.run();
 		try {
@@ -48,11 +36,11 @@ public class Auditor {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			con2 = DriverManager.getConnection(
+			Connection con2 = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
 					this.username, this.password);
 
-			st2 = con2.createStatement();
+			Statement st2 = con2.createStatement();
 
 			String query = "SELECT * FROM sid_log";
 			ResultSet rs2 = st2.executeQuery(query);
@@ -81,11 +69,11 @@ public class Auditor {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			con2 = DriverManager.getConnection(
+			Connection con2 = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/sid2?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
 					"root", "");
 
-			st2 = con2.createStatement();
+			Statement st2 = con2.createStatement();
 
 			String query = "SELECT * FROM sid_log";
 			ResultSet rs2 = st2.executeQuery(query);

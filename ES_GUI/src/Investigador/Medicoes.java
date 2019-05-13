@@ -4,6 +4,13 @@ import java.sql.Time;
 import java.util.Date;
 
 public class Medicoes {
+	public Medicoes(int numero_medicao, Time tempo, Date data, int id_cultura, int id_variavel) {
+		this.numero_medicao = numero_medicao;
+		this.tempo = tempo;
+		this.data = data;
+		this.id_cultura = id_cultura;
+		this.id_variavel = id_variavel;
+	}
 	private int numero_medicao;
 	private Time tempo;
 	private Date data;

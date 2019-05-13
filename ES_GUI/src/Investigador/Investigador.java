@@ -62,7 +62,6 @@ public class Investigador {
 		Statement st2 = con3.createStatement();
 		String query = "SELECT * FROM cultura WHERE responsavel = '" + this.id_investigador + "'";
 		ResultSet rs2 = st2.executeQuery(query);
-
 		while (rs2.next()) {
 			if (!rs2.wasNull()) {
 				int id_cultura = rs2.getInt("id_cultura");
@@ -86,7 +85,6 @@ public class Investigador {
 				ResultSet rs2 = st2.executeQuery(query);
 				while (rs2.next()) {
 					if (!rs2.wasNull()) {
-						System.out.println("nao era nulo");
 						int numero = rs2.getInt("numero_medicao");
 						Time hora = rs2.getTime("data_hora_medicao");
 						Date data = rs2.getDate("data_hora_medicao");
