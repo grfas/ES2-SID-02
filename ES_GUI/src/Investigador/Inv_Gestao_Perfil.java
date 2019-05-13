@@ -17,6 +17,7 @@ public class Inv_Gestao_Perfil extends JFrame {
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
+	private Investigador inv;
 
 	/**
 	 * Launch the application.
@@ -24,8 +25,7 @@ public class Inv_Gestao_Perfil extends JFrame {
 
 			public void run() {
 				try {
-					Inv_Gestao_Perfil frame = new Inv_Gestao_Perfil();
-					frame.setVisible(true);
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -35,7 +35,8 @@ public class Inv_Gestao_Perfil extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Inv_Gestao_Perfil() {
+	public Inv_Gestao_Perfil(Investigador inv) {
+		this.inv = inv;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -63,10 +64,6 @@ public class Inv_Gestao_Perfil extends JFrame {
 		JButton btnGuardar = new JButton("Guardar");
 		btnGuardar.setBounds(58, 172, 104, 31);
 		contentPane.add(btnGuardar);
-		
-		JButton btnSair = new JButton("Sair");
-		btnSair.setBounds(324, 227, 89, 23);
-		contentPane.add(btnSair);
 		
 		textField = new JTextField();
 		textField.setBounds(146, 34, 223, 20);

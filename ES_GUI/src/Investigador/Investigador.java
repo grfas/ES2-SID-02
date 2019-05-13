@@ -6,12 +6,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.sql.Time;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class Investigador {
 
@@ -91,14 +87,13 @@ public class Investigador {
 				while (rs2.next()) {
 					if (!rs2.wasNull()) {
 						int numero = rs2.getInt("numero_medicao");
-						Time hora = rs2.getTime("data_hora_medicao");
 						Date data = rs2.getDate("data_hora_medicao");
 						int valor_medicao = rs2.getInt("valor_medicao");
 						int idcultura = rs2.getInt("id_cultura");
 						int idvariavel = rs2.getInt("id_variavel");
 						
 
-						lista.add(new Medicoes(numero, hora, data, valor_medicao, idcultura, idvariavel));
+						lista.add(new Medicoes(numero, data, valor_medicao, idcultura, idvariavel));
 					}
 				}
 			}
@@ -114,8 +109,7 @@ public class Investigador {
 		int idProcura = Integer.parseInt(s);
 		for (Medicoes m : lista) {
 			if (m.getId_cultura() == idProcura) {
-				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getTempo().toString() + "  "
-						+ m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
 						+ Integer.toString(m.getId_variavel()));
 			}
 		}
@@ -128,8 +122,7 @@ public class Investigador {
 		int variavelProcura = Integer.parseInt(v);
 		for (Medicoes m : lista) {
 			if (m.getId_cultura() == idProcura && m.getId_variavel() == variavelProcura) {
-				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getTempo().toString() + "  "
-						+ m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
 						+ Integer.toString(m.getId_variavel()));
 			}
 		}
@@ -141,8 +134,7 @@ public class Investigador {
 		int idProcura = Integer.parseInt(i);
 		for (Medicoes m : lista) {
 			if (m.getId_variavel() == idProcura) {
-				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getTempo().toString() + "  "
-						+ m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
 						+ Integer.toString(m.getId_variavel()));
 			}
 		}
@@ -174,20 +166,11 @@ public class Investigador {
 			Connection con2 = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
 					this.username, this.password);
-
 			Statement st2 = con2.createStatement();
-
-			DateTimeFormatter formatter =
-		            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S", Locale.ENGLISH);
-
-		        String text = m.getData().toString() + m.getTempo().toString();
-		        LocalDateTime localDateTime = LocalDateTime.parse(text, formatter);
-		        LocalTime localTime = localDateTime.toLocalTime();
-		        System.out.println(localTime);
 			
+			String text = new SimpleDateFormat("yyyy,MM,dd HH,mm,dd").format(m.getData());
 			String query = "INSERT INTO `medicoes`(`numero_medicao`, `data_hora_medicao`, `valor_medicao`, `id_cultura`, `id_variavel`) "
-					+ " VALUES (" + m.getNumero_medicao() + " , " + localTime  + " , " + m.getValor_medicao()  + " , " + m.getId_cultura()  + " , " + m.getId_variavel() + ")";
-			System.out.println(query);
+					+ " VALUES (" + m.getNumero_medicao() + " , str_to_date('" + text  + "', '%Y,%m,%d %H,%i,%S') , " + m.getValor_medicao()  + " , " + m.getId_cultura()  + " , " + m.getId_variavel() + ")";
 			st2.executeUpdate(query);
 			lista.clear();
 			procuraMedicoes(con2);

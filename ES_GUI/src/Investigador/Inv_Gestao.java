@@ -54,9 +54,8 @@ public class Inv_Gestao extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Inv_Gestao_Perfil gestaoInv = new Inv_Gestao_Perfil();
+				Inv_Gestao_Perfil gestaoInv = new Inv_Gestao_Perfil(inv);
 				gestaoInv.run();
-
 			}
 		});
 		

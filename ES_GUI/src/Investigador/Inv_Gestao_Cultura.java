@@ -1,18 +1,24 @@
 package Investigador;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
+
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 
 public class Inv_Gestao_Cultura extends JFrame {
 
@@ -145,6 +151,25 @@ public class Inv_Gestao_Cultura extends JFrame {
 
 			}
 		});
+		
+		btnInserir.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {		
+				try {
+					int c = Integer.parseInt((String) comboBox.getSelectedItem());
+					int v = Integer.parseInt(JOptionPane.showInputDialog("Qual a variavel?"));
+					int valor = Integer.parseInt(textField.getText());
+					String tempo = textField_1.getText();
+					DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+					Date date = format.parse(tempo);					
+					inv.insereMedicao(new Medicoes(0, date, valor, c, v));
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+
 
 	}
 
