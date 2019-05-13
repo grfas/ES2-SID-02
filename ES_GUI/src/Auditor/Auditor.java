@@ -9,8 +9,6 @@ import java.sql.Statement;
 import java.sql.Time;
 import java.util.ArrayList;
 
-import javax.swing.JFrame;
-
 public class Auditor {
 
 	private ArrayList<Log> lista = new ArrayList<Log>();

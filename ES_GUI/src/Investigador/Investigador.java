@@ -2,11 +2,16 @@ package Investigador;
 
 import java.sql.Connection;
 import java.sql.Date;
+import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class Investigador {
 
@@ -34,7 +39,7 @@ public class Investigador {
 	}
 
 	private void findID(Connection con3) throws SQLException {
-		
+
 		Statement st2 = con3.createStatement();
 		String query = "SELECT * FROM sid_user WHERE user_name = '" + this.username + "'";
 		ResultSet rs2 = st2.executeQuery(query);
@@ -44,7 +49,7 @@ public class Investigador {
 				this.email = rs2.getString("email");
 			}
 		}
-		
+
 		Statement st = con3.createStatement();
 		query = "SELECT * FROM investigador WHERE email = '" + this.email + "'";
 		ResultSet rs = st.executeQuery(query);
@@ -54,11 +59,11 @@ public class Investigador {
 				this.id_investigador = rs.getInt("id_investigador");
 			}
 		}
-		
+
 	}
-	
+
 	private void adicionaCulturas(Connection con3) throws SQLException {
-		
+
 		Statement st2 = con3.createStatement();
 		String query = "SELECT * FROM cultura WHERE responsavel = '" + this.id_investigador + "'";
 		ResultSet rs2 = st2.executeQuery(query);
@@ -71,16 +76,16 @@ public class Investigador {
 				culturas.add(new Cultura(id_cultura, nome_cultura, descricao_cultura, responsavel));
 			}
 		}
-		
+
 	}
 
 	public void procuraMedicoes(Connection con) {
 		try {
-			if(!lista.isEmpty()) {
+			if (!lista.isEmpty()) {
 				lista.clear();
 			}
 			Statement st2 = con.createStatement();
-			for(Cultura c : culturas) {
+			for (Cultura c : culturas) {
 				String query = "SELECT * FROM medicoes WHERE id_cultura = " + c.getId_cultura();
 				ResultSet rs2 = st2.executeQuery(query);
 				while (rs2.next()) {
@@ -88,29 +93,108 @@ public class Investigador {
 						int numero = rs2.getInt("numero_medicao");
 						Time hora = rs2.getTime("data_hora_medicao");
 						Date data = rs2.getDate("data_hora_medicao");
+						int valor_medicao = rs2.getInt("valor_medicao");
 						int idcultura = rs2.getInt("id_cultura");
 						int idvariavel = rs2.getInt("id_variavel");
 						
-						lista.add(new Medicoes(numero, hora, data, idcultura, idvariavel));						
+
+						lista.add(new Medicoes(numero, hora, data, valor_medicao, idcultura, idvariavel));
 					}
 				}
 			}
-			
+
 			con.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public ArrayList<String> procura(String s) {
+	public ArrayList<String> procuraIdCultura(String s) {
 		ArrayList<String> listaProcurada = new ArrayList<String>();
 		int idProcura = Integer.parseInt(s);
-		for(Medicoes m : lista) {
-			if(m.getId_cultura() == idProcura || m.getId_variavel() == idProcura) {
-				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getTempo().toString() + "  " + m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    " + Integer.toString(m.getId_variavel()) );
+		for (Medicoes m : lista) {
+			if (m.getId_cultura() == idProcura) {
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getTempo().toString() + "  "
+						+ m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
+						+ Integer.toString(m.getId_variavel()));
 			}
-		}	
+		}
 		return listaProcurada;
+	}
+
+	public ArrayList<String> procura(String i, String v) {
+		ArrayList<String> listaProcurada = new ArrayList<String>();
+		int idProcura = Integer.parseInt(i);
+		int variavelProcura = Integer.parseInt(v);
+		for (Medicoes m : lista) {
+			if (m.getId_cultura() == idProcura && m.getId_variavel() == variavelProcura) {
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getTempo().toString() + "  "
+						+ m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
+						+ Integer.toString(m.getId_variavel()));
+			}
+		}
+		return listaProcurada;
+	}
+
+	public ArrayList<String> procuraVariavel(String i) {
+		ArrayList<String> listaProcurada = new ArrayList<String>();
+		int idProcura = Integer.parseInt(i);
+		for (Medicoes m : lista) {
+			if (m.getId_variavel() == idProcura) {
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getTempo().toString() + "  "
+						+ m.getData().toString() + "    " + Integer.toString(m.getId_cultura()) + "    "
+						+ Integer.toString(m.getId_variavel()));
+			}
+		}
+		return listaProcurada;
+	}
+
+	public void apagaMedicao(int i) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con2 = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
+					this.username, this.password);
+
+			Statement st2 = con2.createStatement();
+
+			String query = "DELETE FROM medicoes WHERE numero_medicao = '" + lista.get(i).getNumero_medicao() + "'";
+			st2.executeUpdate(query);
+			lista.clear();
+			procuraMedicoes(con2);
+			con2.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void insereMedicao(Medicoes m) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con2 = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
+					this.username, this.password);
+
+			Statement st2 = con2.createStatement();
+
+			DateTimeFormatter formatter =
+		            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S", Locale.ENGLISH);
+
+		        String text = m.getData().toString() + m.getTempo().toString();
+		        LocalDateTime localDateTime = LocalDateTime.parse(text, formatter);
+		        LocalTime localTime = localDateTime.toLocalTime();
+		        System.out.println(localTime);
+			
+			String query = "INSERT INTO `medicoes`(`numero_medicao`, `data_hora_medicao`, `valor_medicao`, `id_cultura`, `id_variavel`) "
+					+ " VALUES (" + m.getNumero_medicao() + " , " + localTime  + " , " + m.getValor_medicao()  + " , " + m.getId_cultura()  + " , " + m.getId_variavel() + ")";
+			System.out.println(query);
+			st2.executeUpdate(query);
+			lista.clear();
+			procuraMedicoes(con2);
+			con2.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

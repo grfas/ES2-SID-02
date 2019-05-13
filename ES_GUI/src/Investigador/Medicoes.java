@@ -4,18 +4,30 @@ import java.sql.Time;
 import java.util.Date;
 
 public class Medicoes {
-	public Medicoes(int numero_medicao, Time tempo, Date data, int id_cultura, int id_variavel) {
-		this.numero_medicao = numero_medicao;
-		this.tempo = tempo;
-		this.data = data;
-		this.id_cultura = id_cultura;
-		this.id_variavel = id_variavel;
-	}
+	private int valor_medicao;
 	private int numero_medicao;
 	private Time tempo;
 	private Date data;
 	private int id_cultura;
 	private int id_variavel;
+
+	public Medicoes(int numero_medicao, Time tempo, Date data, int valor_medicao, int id_cultura, int id_variavel ) {
+		this.numero_medicao = numero_medicao;
+		this.tempo = tempo;
+		this.data = data;
+		this.id_cultura = id_cultura;
+		this.id_variavel = id_variavel;
+		this.valor_medicao = valor_medicao;
+	}
+
+	public int getValor_medicao() {
+		return valor_medicao;
+	}
+
+	public void setValor_medicao(int valor_medicao) {
+		this.valor_medicao = valor_medicao;
+	}
+	
 	public int getNumero_medicao() {
 		return numero_medicao;
 	}

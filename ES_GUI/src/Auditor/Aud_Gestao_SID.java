@@ -10,6 +10,8 @@ import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JCheckBox;
@@ -73,5 +75,30 @@ public class Aud_Gestao_SID extends JFrame {
 		JLabel lblBaseDeDados = new JLabel("Base de Dados : SID");
 		lblBaseDeDados.setBounds(42, 11, 140, 14);
 		contentPane.add(lblBaseDeDados);
+		btnPesquisar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (!listaLogs.isEmpty()) {
+					listaLogs.clear();
+				}
+				if (!textField.getText().isEmpty()) {
+					ArrayList<Log> logs = new ArrayList<Log>();
+					try {
+						logs = aud.procura(textField.getText(), true);
+						for (Log l : logs) {
+							String s = l.getData().toString() + "  " + l.getHora() + "  " + l.getUsername() + "  "
+									+ l.getOperacao() + "  " + l.getMensagem();
+							listaLogs.addElement(s);
+						}
+						logs.clear();
+					} catch (ClassNotFoundException e1) {
+						e1.printStackTrace();
+					}
+				}
+			}
+		});
+
+		
 	}
 }
