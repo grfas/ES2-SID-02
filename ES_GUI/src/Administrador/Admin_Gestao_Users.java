@@ -10,7 +10,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.Color;
 
-public class Admin_Gestao extends JFrame {
+public class Admin_Gestao_Users extends JFrame {
 
 	private JPanel contentPane;
 
@@ -21,7 +21,7 @@ public class Admin_Gestao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Admin_Gestao frame = new Admin_Gestao();
+					Admin_Gestao_Users frame = new Admin_Gestao_Users();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -33,23 +33,24 @@ public class Admin_Gestao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Admin_Gestao() {
+	public Admin_Gestao_Users() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 500);
+		setBounds(100, 100, 450, 500);
 		contentPane = new JPanel();
-		contentPane.setBackground(Color.LIGHT_GRAY);
+		contentPane.setBackground(new Color(192, 192, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton btnGestaoDeCulturas = new JButton("Gestao de Culturas");
-		btnGestaoDeCulturas.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnGestaoDeCulturas.setBounds(162, 110, 165, 83);
-		contentPane.add(btnGestaoDeCulturas);
+		JButton btnGestaoDePerfil = new JButton("Gestao de Perfil");
+		btnGestaoDePerfil.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnGestaoDePerfil.setBounds(124, 113, 164, 56);
+		contentPane.add(btnGestaoDePerfil);
 		
-		JButton btnGestaoDeUtilizadores = new JButton("Gestao de Utilizadores");
-		btnGestaoDeUtilizadores.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnGestaoDeUtilizadores.setBounds(162, 270, 165, 83);
-		contentPane.add(btnGestaoDeUtilizadores);
+		JButton btnGestaoDeUsers = new JButton("Gestao de Users");
+		btnGestaoDeUsers.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnGestaoDeUsers.setBounds(124, 224, 164, 56);
+		contentPane.add(btnGestaoDeUsers);
 	}
+
 }
