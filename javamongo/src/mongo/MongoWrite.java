@@ -153,8 +153,15 @@ public class MongoWrite {
 	 * @return
 	 */
 	public String splitDat(String s) {
-		String a = s.substring(7, 14);
-		return a;
+		String data = s.substring(7, 16);
+		String [] parts = data.split("/");
+		String dia = parts[0];
+		String mes = parts[1];
+		String ano = parts[2];
+		
+		String concat = ano + "/" +mes +"/" +dia;
+		System.out.println(concat);
+		return concat;
 
 	}
 
@@ -164,8 +171,22 @@ public class MongoWrite {
 	 * @return
 	 */
 	public String splitTim(String s) {
-		String a = s.substring(7, 14);
+		System.out.println(s.length());
+		if(s.length()==13) {
+			String a = s.substring(7, 12);
+			return a;
+		}
+		else if(s.length()==14) {
+		String a = s.substring(7, 13);
 		return a;
+		}else if (s.length()== 15) {
+			String a = s.substring(7, 14);
+			return a;
+		}else if (s.length()==16) {
+			String a = s.substring(7, 15);
+			return a;
+		}
+		return null;
 	}
 
 	/**
