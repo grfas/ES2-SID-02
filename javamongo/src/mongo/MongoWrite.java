@@ -2,9 +2,6 @@ package mongo;
 
 import java.util.*;
 import org.bson.Document;
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -13,7 +10,6 @@ public class MongoWrite {
 	private static int tempo = 5000;
 
 	public MongoWrite() {
-		// this.tempo = tempo;
 
 	}
 
@@ -23,10 +19,19 @@ public class MongoWrite {
 	MongoDatabase database = mongoClient1.getDatabase("sid");
 	MongoCollection<Document> collection = database.getCollection("Sensor");
 
+	/**
+	 * 
+	 * @param tmp
+	 * @param hum
+	 * @param dat
+	 * @param tim
+	 * @param cell
+	 */
 	public void insert(String tmp, String hum, String dat, String tim, String cell) {
 		LinkedList<Document> listaDeDocs = new LinkedList<Document>();
 		String copy = " 'cell':0";
 		if (!cell.equals(copy)) {
+
 			if (!tmp.isEmpty() || !hum.isEmpty() || !dat.isEmpty() || !tim.isEmpty() || !cell.isEmpty()) {
 
 				Document docTmp = new Document("id_sensor", splitNameTmp(tmp)).append("variavel", splitTmpVar(tmp))
@@ -47,8 +52,8 @@ public class MongoWrite {
 
 					for (Document document : listaDeDocs) {
 						collection.insertOne(document);
-						System.out.println(listaDeDocs);
-						// listaDeDocs.clear;
+						System.out.println("Inserido Com Sucesso no Mongo");
+
 					}
 				}
 
@@ -68,7 +73,8 @@ public class MongoWrite {
 
 						.append("TimeStamp", splitDat(dat) + " " + splitTim(tim)).append("migracao", 0);
 
-				Document docCell = new Document("id_sensor", splitNameCellnull(cell)).append("variavel", splitCellVarNull(cell))
+				Document docCell = new Document("id_sensor", splitNameCellnull(cell))
+						.append("variavel", splitCellVarNull(cell))
 						.append("TimeStamp", splitDat(dat) + "  " + splitTim(tim)).append("migracao", 0);
 
 				listaDeDocs.add(docTmp);
@@ -76,18 +82,46 @@ public class MongoWrite {
 				listaDeDocs.add(docCell);
 
 			}
+			try {
+				if (!listaDeDocs.isEmpty()) {
+
+					for (Document document : listaDeDocs) {
+						collection.insertOne(document);
+
+					}
+					System.out.println("Inserido Com Sucesso no Mongo");
+				}
+
+			} catch (Exception e) {
+			}
+
+			try {
+				Thread.sleep(tempo);
+			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+			}
 
 		}
 	}
 
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitNameTmp(String s) {
 		String a = s.substring(2, 5);
 		return a;
 	}
 
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitTmpVar(String s) {
 		String a = s.substring(8, 13);
-		System.out.println(a);
+
 		if (a.matches("[0-9.]*")) {
 			return a;
 		} else {
@@ -96,6 +130,11 @@ public class MongoWrite {
 		}
 	}
 
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitHum(String s) {
 
 		String a = s.substring(7, 12);
@@ -108,45 +147,73 @@ public class MongoWrite {
 
 	}
 
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitDat(String s) {
 		String a = s.substring(7, 14);
 		return a;
 
 	}
 
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitTim(String s) {
 		String a = s.substring(7, 14);
 		return a;
 	}
 
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitNameCell(String s) {
 		String a = s.substring(1, 5);
 
-		if (a.equals("cell:")) {
+		if (a.equals("cell")) {
 
 			String name = "Luminosidade";
 			return name;
 		} else {
 			return null;
 		}
-		
-		
-	
+
 	}
+
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitNameCellnull(String s) {
-		String a1 = "luminosidade";
+		String a1 = "Luminosidade";
 		return a1;
 	}
-	
+
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitCellVarNull(String s) {
-		String a2= "0";
+		String a2 = "0";
 		return a2;
 	}
 
-	// SE o Sensor tiver a ler valores maiores ajustar
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
+
 	public String splitCell(String s) {
-		System.out.println(s.length());
-		System.out.println(s);
+
 		if (s.length() == 23) {
 			String a = s.substring(8, 9);
 			return a;
@@ -154,16 +221,21 @@ public class MongoWrite {
 			String a = s.substring(8, 10);
 			return a;
 		} else if (s.length() == 25) {
-				String a = s.substring(8, 11);
-				return a;
+			String a = s.substring(8, 11);
+			return a;
 
-			}else if (s.length()==26) {
-				String a = s.substring(8,12);
-				return a;
+		} else if (s.length() == 26) {
+			String a = s.substring(8, 12);
+			return a;
 		}
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param s
+	 * @return
+	 */
 	public String splitSens(String s) {
 
 		String a = s.substring(18, 21);

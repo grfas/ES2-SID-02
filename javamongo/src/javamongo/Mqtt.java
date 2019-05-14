@@ -37,8 +37,10 @@ public class Mqtt implements MqttCallback {
 	}
 
 	/**
-	 * Subscribe.
-	 *
+	 * Subscribe. In this method we need to make sure the brokerUrl, clientID is
+	 * passing the right values so that the connection can be Established with the
+	 * topic and broker
+	 * 
 	 * @param topic the topic
 	 */
 	public void subscribe(String topic) {
@@ -101,6 +103,24 @@ public class Mqtt implements MqttCallback {
 	 * @see org.eclipse.paho.client.mqttv3.MqttCallback#messageArrived(java.lang.
 	 * String, org.eclipse.paho.client.mqttv3.MqttMessage)
 	 */
+
+	/**
+	 * @author Francisco
+	 * @category The first (if) is in order to differentiate from the connection
+	 *           message and the information messages, allowing ourselves to get a
+	 *           not needed message.
+	 * 
+	 *           The second (if) has the objective of splitting the String into
+	 *           several strings that allocated into an array, in order to be able
+	 *           to access it afterwards and verifying the number of splits that
+	 *           occurred.
+	 * 
+	 *           There is a call to (mw) with is an instance of a MongoWrite in
+	 *           order to insert the strings in the mongo database.
+	 * @param         topic,
+	 * @param message
+	 * 
+	 */
 	public void messageArrived(String topic, MqttMessage message) throws Exception {
 
 		System.out.println("Mqtt topic : " + topic);
@@ -111,34 +131,30 @@ public class Mqtt implements MqttCallback {
 
 			String[] parts = mens.split(Pattern.quote(","));
 			if (parts.length == 5) {
-				System.out.println(parts.length);
+
+				System.out.println("Leitura Com Luminosidade");
+
 				String a = parts[0];
-				System.out.println("a");
+
 				String b = parts[1];
-				System.out.println("b");
+
 				String c = parts[2];
 				String d = parts[3];
 				String e = parts[4];
 
 				wr.insert(a, b, c, d, e);
 
-			} else if(!(parts.length==5)){
-				
-				
+			} else if (!(parts.length == 5)) {
+				System.out.println("Leitura Sem Luminosidade");
 				String cell = " 'cell':0";
 				String a = parts[0];
-				
+
 				String b = parts[1];
-				
+
 				String c = parts[2];
-				
+
 				String d = parts[3];
-				
-				
-				
-				String concat=null;
-				
-				System.out.println("1");
+
 				wr.insert(a, b, c, d, cell);
 
 			}
