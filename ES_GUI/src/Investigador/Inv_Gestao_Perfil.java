@@ -1,6 +1,8 @@
 package Investigador;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,7 +15,6 @@ import java.awt.Color;
 public class Inv_Gestao_Perfil extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -43,11 +44,7 @@ public class Inv_Gestao_Perfil extends JFrame {
 		contentPane.setBackground(Color.LIGHT_GRAY);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		JLabel lblUsername = new JLabel("Username :");
-		lblUsername.setBounds(26, 32, 63, 25);
-		contentPane.add(lblUsername);
+		contentPane.setLayout(null);	
 		
 		JLabel lblPassword = new JLabel("Password : ");
 		lblPassword.setBounds(26, 59, 66, 25);
@@ -65,11 +62,6 @@ public class Inv_Gestao_Perfil extends JFrame {
 		btnGuardar.setBounds(58, 172, 104, 31);
 		contentPane.add(btnGuardar);
 		
-		textField = new JTextField();
-		textField.setBounds(146, 34, 223, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
 		textField_1 = new JTextField();
 		textField_1.setBounds(146, 61, 223, 20);
 		contentPane.add(textField_1);
@@ -84,5 +76,34 @@ public class Inv_Gestao_Perfil extends JFrame {
 		textField_3.setBounds(146, 113, 223, 20);
 		contentPane.add(textField_3);
 		textField_3.setColumns(10);
+		
+		btnGuardar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String password = textField_1.getText().toString();
+				String email = textField_2.getText().toString();
+				String categoria_profissional = textField_3.getText().toString();
+				String query = "SELECT PASSWORD('" + password + "');";
+				System.out.println(query);
+				String hash = inv.findHash(query, password);
+				String query1 = "SET PASSWORD FOR '" + inv.getUsername() + "'@'localhost' = '" + hash + "';";
+				inv.executaQuery(query1);
+				System.out.println(query1);
+
+				String query2 = "UPDATE investigador SET categoria_profissional='" +categoria_profissional +"' WHERE email='" + inv.getEmail() + "';";
+				System.out.println(query2);
+
+				inv.executaUpdate(query2);
+				String query3 = "UPDATE sid_user SET user_password='" + password + "',email= '" + email + "' WHERE email='" + inv.getEmail() + "';";
+				System.out.println(query3);
+
+				inv.executaUpdate(query3);
+				inv.setPassword(password);
+				inv.setEmail(email);
+				
+			}
+		});
+		
 	}
 }

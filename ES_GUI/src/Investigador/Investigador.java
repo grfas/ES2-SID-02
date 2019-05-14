@@ -13,6 +13,8 @@ public class Investigador {
 
 	private int id_investigador;
 	private String email;
+
+
 	private String username;
 	private String password;
 	private Inv_Gestao inv;
@@ -187,6 +189,84 @@ public class Investigador {
 			procuraMedicoes(con2);
 			con2.close();
 		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String findHash(String query,String password) {
+		String hash = null;
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con2 = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
+					"root", "");
+			Statement st2 = con2.createStatement();
+			ResultSet rs2 = st2.executeQuery(query);
+
+			while (rs2.next()) {
+				if (!rs2.wasNull()) {					
+					hash = rs2.getString("PASSWORD('" + password + "')");
+				}
+			}			
+			con2.close();
+			} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return hash;
+		
+	}
+
+	public void executaQuery(String query) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con2 = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
+					"root", "");
+			Statement st2 = con2.createStatement();
+			st2.executeQuery(query);	
+			con2.close();
+			} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void executaUpdate(String query) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con2 = DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
+					"root", "");
+			Statement st2 = con2.createStatement();
+			st2.executeUpdate(query);	
+			con2.close();
+			} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
