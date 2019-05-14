@@ -75,7 +75,7 @@ public class MongoWrite {
 
 				Document docCell = new Document("id_sensor", splitNameCellnull(cell))
 						.append("variavel", splitCellVarNull(cell))
-						.append("TimeStamp", splitDat(dat) + "  " + splitTim(tim)).append("migracao", 0);
+						.append("TimeStamp", splitDat(dat) + " " + splitTim(tim)).append("migracao", 0);
 
 				listaDeDocs.add(docTmp);
 
@@ -184,22 +184,43 @@ public class MongoWrite {
 	 * @return
 	 */
 	public String splitTim(String s) {
-		System.out.println(s.length());
-		if(s.length()==13) {
-			String a = s.substring(7, 12);
-			return a;
+		
+	
+		String [] parts = s.split(":");
+		String join=null;
+		String join2=null;
+		String join3=null;
+		
+		String hora = parts[1];
+		if(hora.length()==2) {
+			String a=hora.replace("\"", "");
+			join =0+a;
+		}else {
+			String a=hora.replace("\"", "");
+			 join = a;
 		}
-		else if(s.length()==14) {
-		String a = s.substring(7, 13);
-		return a;
-		}else if (s.length()== 15) {
-			String a = s.substring(7, 14);
-			return a;
-		}else if (s.length()==16) {
-			String a = s.substring(7, 15);
-			return a;
+		String min = parts[2];
+		
+		if(min.length()==1) {
+			 join2= 0+min;
+		}else {
+			 join2 = min;
 		}
-		return null;
+		String seg = parts[3];
+	
+		if (seg.length() == 2) {
+			String a=seg.replace("\"", "");
+			join3 = 0 + a;
+			
+		} else {
+			String a=seg.replace("\"", "");
+			join3 = a;
+		}
+
+		String concat = join + ":" + join2 + ":" + join3;
+	
+		return concat;
+
 	}
 
 	/**
