@@ -155,11 +155,24 @@ public class MongoWrite {
 	public String splitDat(String s) {
 		String data = s.substring(7, 16);
 		String [] parts = data.split("/");
+		String join=null;
+		String join2=null;
+		
 		String dia = parts[0];
+		if(dia.length()==1) {
+			join =0+dia;
+		}else {
+			 join = dia;
+		}
 		String mes = parts[1];
+		if(mes.length()==1) {
+			 join2= 0+mes;
+		}else {
+			 join2 = mes;
+		}
 		String ano = parts[2];
 		
-		String concat = ano + "/" +mes +"/" +dia;
+		String concat = ano + "-" +join2 +"-" +join;
 		System.out.println(concat);
 		return concat;
 
