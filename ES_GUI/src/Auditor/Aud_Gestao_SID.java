@@ -1,8 +1,5 @@
 package Auditor;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -14,11 +11,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-import javax.swing.JCheckBox;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
 
+@SuppressWarnings("serial")
 public class Aud_Gestao_SID extends JFrame {
 
 	private JPanel contentPane;
@@ -42,7 +39,7 @@ public class Aud_Gestao_SID extends JFrame {
 	 * Create the frame.
 	 */
 	public Aud_Gestao_SID(Auditor aud) {
-		this.aud = aud;
+		this.setAud(aud);
 		setBackground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
@@ -62,7 +59,7 @@ public class Aud_Gestao_SID extends JFrame {
 		btnPesquisar.setBounds(267, 53, 122, 30);
 		contentPane.add(btnPesquisar);
 
-		JList list = new JList<String>(listaLogs);
+		JList<String> list = new JList<String>(listaLogs);
 		list.setBounds(42, 149, 377, 263);
 		ArrayList<Log> listaTemp = aud.servidor1();
 		for (Log l : listaTemp) {
@@ -99,6 +96,13 @@ public class Aud_Gestao_SID extends JFrame {
 			}
 		});
 
-		
+	}
+
+	public Auditor getAud() {
+		return aud;
+	}
+
+	public void setAud(Auditor aud) {
+		this.aud = aud;
 	}
 }

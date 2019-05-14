@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
+@SuppressWarnings("serial")
 public class Inv_Gestao_Cultura extends JFrame {
 
 	private JPanel contentPane;
@@ -123,15 +124,14 @@ public class Inv_Gestao_Cultura extends JFrame {
 				String c = (String) comboBox.getSelectedItem();
 				String v = (String) comboBox_1.getSelectedItem();
 				DefaultListModel<String> model = new DefaultListModel<>();
-				
+
 				if (v.equals("   ") && !c.equals("   ")) {
 					for (String val : inv.procuraIdCultura(c))
 						model.addElement(val);
 					Inv_Gestao_Cultura_Pesquisa igcp = new Inv_Gestao_Cultura_Pesquisa(inv, model, c, v);
 					igcp.run();
 
-				}
-				else if (c.equals("   ") && !v.equals("   ")) {
+				} else if (c.equals("   ") && !v.equals("   ")) {
 					for (String val : inv.procuraVariavel(v))
 						model.addElement(val);
 					Inv_Gestao_Cultura_Pesquisa igcp = new Inv_Gestao_Cultura_Pesquisa(inv, model, c, v);
@@ -151,18 +151,19 @@ public class Inv_Gestao_Cultura extends JFrame {
 
 			}
 		});
-		
+
 		btnInserir.addActionListener(new ActionListener() {
 
 			@Override
-			public void actionPerformed(ActionEvent e) {		
+			public void actionPerformed(ActionEvent e) {
 				try {
 					int c = Integer.parseInt((String) comboBox.getSelectedItem());
-					int v = Integer.parseInt((String) comboBox_1.getSelectedItem());;
+					int v = Integer.parseInt((String) comboBox_1.getSelectedItem());
+					;
 					int valor = Integer.parseInt(textField.getText());
 					String tempo = textField_1.getText();
 					DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
-					Date date = format.parse(tempo);					
+					Date date = format.parse(tempo);
 					inv.insereMedicao(new Medicoes(0, date, valor, c, v));
 				} catch (ParseException e1) {
 					e1.printStackTrace();
@@ -170,7 +171,14 @@ public class Inv_Gestao_Cultura extends JFrame {
 			}
 		});
 
+	}
 
+	public Investigador getInv() {
+		return inv;
+	}
+
+	public void setInv(Investigador inv) {
+		this.inv = inv;
 	}
 
 }

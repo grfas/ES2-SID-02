@@ -9,11 +9,6 @@ import java.sql.Statement;
 import javax.swing.JFrame;
 
 public class User {
-
-	private Connection con;
-	private Statement st;
-	private ResultSet rs;
-
 	private String username;
 	private String password;
 	private String permissao;
@@ -29,11 +24,11 @@ public class User {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 
-			con = DriverManager.getConnection(
+			Connection con = DriverManager.getConnection(
 					"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
 					"root", "");
 			login.dispose();
-			st = con.createStatement();
+			Statement st = con.createStatement();
 			String query = "SELECT * FROM sid_user_permissoes WHERE username = '" + this.username + "'";
 			ResultSet rs = st.executeQuery(query);
 			while (rs.next()) {
@@ -58,7 +53,6 @@ public class User {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			con.close();
 		}
 	}
 

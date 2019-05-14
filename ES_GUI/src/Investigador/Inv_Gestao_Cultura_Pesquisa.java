@@ -1,8 +1,5 @@
 package Investigador;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -10,15 +7,12 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JList;
-import javax.swing.JOptionPane;
-
 import java.awt.Color;
-
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 
+@SuppressWarnings("serial")
 public class Inv_Gestao_Cultura_Pesquisa extends JFrame {
 
 	private JPanel contentPane;
@@ -83,7 +77,7 @@ public class Inv_Gestao_Cultura_Pesquisa extends JFrame {
 		lblnomevariavel.setBounds(180, 89, 111, 23);
 		contentPane.add(lblnomevariavel);
 
-		JList list = new JList<String>(listaMedicoes);
+		JList<String> list = new JList<String>(listaMedicoes);
 		list.setBounds(62, 145, 375, 224);
 		contentPane.add(list);
 
@@ -110,8 +104,9 @@ public class Inv_Gestao_Cultura_Pesquisa extends JFrame {
 
 	private void atualizaListaMedicoes() {
 		for (Medicoes val : inv.lista) {
-			listaMedicoes.addElement(Integer.toString(val.getNumero_medicao()) + "    " + val.getData().toString() + "    " + Integer.toString(val.getValor_medicao()) + "    " + Integer.toString(val.getId_cultura()) + "    "
-					+ Integer.toString(val.getId_variavel()));
+			listaMedicoes.addElement(Integer.toString(val.getNumero_medicao()) + "    " + val.getData().toString()
+					+ "    " + Integer.toString(val.getValor_medicao()) + "    " + Integer.toString(val.getId_cultura())
+					+ "    " + Integer.toString(val.getId_variavel()));
 
 		}
 	}

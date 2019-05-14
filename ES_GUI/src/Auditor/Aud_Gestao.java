@@ -1,14 +1,8 @@
 package Auditor;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import login.User;
-
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -16,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 
+@SuppressWarnings("serial")
 public class Aud_Gestao extends JFrame implements Runnable {
 
 	private Auditor auditor;
@@ -34,7 +29,7 @@ public class Aud_Gestao extends JFrame implements Runnable {
 	 * Create the frame.
 	 */
 	public Aud_Gestao(Auditor aud) {
-		this.auditor = aud;
+		this.setAuditor(aud);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 412, 434);
 		contentPane = new JPanel();
@@ -74,5 +69,13 @@ public class Aud_Gestao extends JFrame implements Runnable {
 				gestaoAud.run();
 			}
 		});
+	}
+
+	public Auditor getAuditor() {
+		return auditor;
+	}
+
+	public void setAuditor(Auditor auditor) {
+		this.auditor = auditor;
 	}
 }
