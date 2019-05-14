@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics scope="ES_GUI" type="Project" date="2019-05-14" xmlns="http://metrics.sourceforge.net/2003/Metrics-First-Flat">
+   <Cycle name="Auditor et al" nodes="3" diameter="2">
+      <Package>Auditor</Package>
+      <Package>login</Package>
+      <Package>Investigador</Package>
+   </Cycle>
+   <Metric id = "VG" description ="McCabe Cyclomatic Complexity" max ="10" hint ="use Extract-method to split the method up">
+      <Values per = "method" avg = "1,694" stddev = "1,471" max = "9">
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[#actionPerformed" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="10"/>
+         <Value name="procuraMedicoes" source ="Investigador.java" package ="Investigador" value ="9"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="7"/>
+         <Value name="LogIn" source ="User.java" package ="login" value ="7"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao_SID.java" package ="Auditor" value ="5"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="5"/>
+         <Value name="procura" source ="Auditor.java" package ="Auditor" value ="5"/>
+         <Value name="findID" source ="Investigador.java" package ="Investigador" value ="5"/>
+         <Value name="servidor1" source ="Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="servidor2" source ="Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="procura" source ="Investigador.java" package ="Investigador" value ="4"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="3"/>
+         <Value name="adicionaCulturas" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="procuraIdCultura" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="procuraVariavel" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[#run" source ="Admin_Gestao.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Users.java" package ="Administrador" value ="2"/>
+         <Value name="run" source ="Aud_Gestao.java" package ="Auditor" value ="2"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="2"/>
+         <Value name="run" source ="Aud_Gestao_SID.java" package ="Auditor" value ="2"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="2"/>
+         <Value name="run" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="2"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="2"/>
+         <Value name="run" source ="Inv_Gestao.java" package ="Investigador" value ="2"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2#actionPerformed" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="2"/>
+         <Value name="run" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="2"/>
+         <Value name="atualizaListaMedicoes" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="2"/>
+         <Value name="run" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="2"/>
+         <Value name="run" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="2"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="2"/>
+         <Value name="apagaMedicao" source ="Investigador.java" package ="Investigador" value ="2"/>
+         <Value name="insereMedicao" source ="Investigador.java" package ="Investigador" value ="2"/>
+         <Value name="Login_ES.anonymous#~initialize[#actionPerformed" source ="Login_ES.java" package ="login" value ="2"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[#run" source ="Login_ES.java" package ="login" value ="2"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[#run" source ="Login_ES.java" package ="(default package)" value ="2"/>
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2#actionPerformed" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getData" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getHora" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getMensagem" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getMigracao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getOperacao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getUsername" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setData" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setHora" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setMensagem" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setMigracao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setOperacao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setUsername" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getDescricao_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getId_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getNome_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getUsername" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setDescricao_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setId_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setNome_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setUsername" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2#actionPerformed" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[#actionPerformed" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[#actionPerformed" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="1"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getData" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getId_cultura" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getId_variavel" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getNumero_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getValor_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setData" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setId_cultura" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setId_variavel" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setNumero_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setValor_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="initialize" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="main" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="User" source ="User.java" package ="login" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="initialize" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[#actionPerformed" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="main" source ="Login_ES.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "PAR" description ="Number of Parameters" max ="5" hint ="Move invoked method or pass an object">
+      <Values per = "method" avg = "0,824" stddev = "1,129" max = "6" maxinrange="false">
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="6" inrange="false"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="5"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="4"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="4"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="3"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="User" source ="User.java" package ="login" value ="3"/>
+         <Value name="procura" source ="Auditor.java" package ="Auditor" value ="2"/>
+         <Value name="procura" source ="Investigador.java" package ="Investigador" value ="2"/>
+         <Value name="main" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="1"/>
+         <Value name="main" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2#actionPerformed" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao_SID.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="1"/>
+         <Value name="setData" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setHora" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setMensagem" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setMigracao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setOperacao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setUsername" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setDescricao_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setId_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setNome_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setUsername" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2#actionPerformed" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[#actionPerformed" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2#actionPerformed" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[#actionPerformed" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[#actionPerformed" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="1"/>
+         <Value name="adicionaCulturas" source ="Investigador.java" package ="Investigador" value ="1"/>
+         <Value name="apagaMedicao" source ="Investigador.java" package ="Investigador" value ="1"/>
+         <Value name="findID" source ="Investigador.java" package ="Investigador" value ="1"/>
+         <Value name="insereMedicao" source ="Investigador.java" package ="Investigador" value ="1"/>
+         <Value name="procuraIdCultura" source ="Investigador.java" package ="Investigador" value ="1"/>
+         <Value name="procuraMedicoes" source ="Investigador.java" package ="Investigador" value ="1"/>
+         <Value name="procuraVariavel" source ="Investigador.java" package ="Investigador" value ="1"/>
+         <Value name="setData" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setId_cultura" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setId_variavel" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setNumero_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setValor_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[#actionPerformed" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="main" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[#actionPerformed" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="main" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[#run" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="run" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="run" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="run" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="servidor1" source ="Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="servidor2" source ="Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="getData" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="getHora" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="getMensagem" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="getMigracao" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="getOperacao" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="getUsername" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="getDescricao_cultura" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="getId_cultura" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="getNome_cultura" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="getUsername" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="run" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="run" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="atualizaListaMedicoes" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="run" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="run" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="0"/>
+         <Value name="getData" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="getId_cultura" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="getId_variavel" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="getNumero_medicao" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="getValor_medicao" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="initialize" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[#run" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="LogIn" source ="User.java" package ="login" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="initialize" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[#run" source ="Login_ES.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NBD" description ="Nested Block Depth" max ="5" hint ="use Extract-method to split the method up">
+      <Values per = "method" avg = "1,847" stddev = "1,068" max = "5">
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="5"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="5"/>
+         <Value name="procuraMedicoes" source ="Investigador.java" package ="Investigador" value ="5"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao_SID.java" package ="Auditor" value ="4"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="servidor1" source ="Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="servidor2" source ="Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="main" source ="Admin_Gestao.java" package ="Administrador" value ="3"/>
+         <Value name="main" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="3"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="3"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="3"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="3"/>
+         <Value name="main" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="3"/>
+         <Value name="main" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="3"/>
+         <Value name="main" source ="Admin_Gestao_Users.java" package ="Administrador" value ="3"/>
+         <Value name="procura" source ="Auditor.java" package ="Auditor" value ="3"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="3"/>
+         <Value name="adicionaCulturas" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="findID" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="procuraIdCultura" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="procuraVariavel" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="procura" source ="Investigador.java" package ="Investigador" value ="3"/>
+         <Value name="initialize" source ="Login_ES.java" package ="login" value ="3"/>
+         <Value name="main" source ="Login_ES.java" package ="login" value ="3"/>
+         <Value name="LogIn" source ="User.java" package ="login" value ="3"/>
+         <Value name="main" source ="Login_ES.java" package ="(default package)" value ="3"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[#run" source ="Admin_Gestao.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Users.java" package ="Administrador" value ="2"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="2"/>
+         <Value name="run" source ="Aud_Gestao.java" package ="Auditor" value ="2"/>
+         <Value name="run" source ="Aud_Gestao_SID.java" package ="Auditor" value ="2"/>
+         <Value name="run" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="2"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="2"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="2"/>
+         <Value name="run" source ="Inv_Gestao.java" package ="Investigador" value ="2"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2#actionPerformed" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="2"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[#actionPerformed" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="2"/>
+         <Value name="run" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="2"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="2"/>
+         <Value name="atualizaListaMedicoes" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="2"/>
+         <Value name="run" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="2"/>
+         <Value name="run" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="2"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="2"/>
+         <Value name="apagaMedicao" source ="Investigador.java" package ="Investigador" value ="2"/>
+         <Value name="insereMedicao" source ="Investigador.java" package ="Investigador" value ="2"/>
+         <Value name="Login_ES.anonymous#~initialize[#actionPerformed" source ="Login_ES.java" package ="login" value ="2"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[#run" source ="Login_ES.java" package ="login" value ="2"/>
+         <Value name="initialize" source ="Login_ES.java" package ="(default package)" value ="2"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[#run" source ="Login_ES.java" package ="(default package)" value ="2"/>
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2#actionPerformed" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getData" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getHora" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getMensagem" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getMigracao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getOperacao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getUsername" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setData" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setHora" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setMensagem" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setMigracao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setOperacao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setUsername" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getDescricao_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getId_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getNome_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getUsername" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setDescricao_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setId_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setNome_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setUsername" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2#actionPerformed" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[#actionPerformed" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[#actionPerformed" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="1"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getData" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getId_cultura" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getId_variavel" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getNumero_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getValor_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setData" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setId_cultura" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setId_variavel" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setNumero_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setValor_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="User" source ="User.java" package ="login" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[#actionPerformed" source ="Login_ES.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "CA" description ="Afferent Coupling">
+      <Values per = "packageFragment" avg = "0,8" stddev = "0,748" max = "2">
+         <Value name="Auditor" package ="Auditor" value ="2"/>
+         <Value name="Investigador" package ="Investigador" value ="1"/>
+         <Value name="login" package ="login" value ="1"/>
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+         <Value name="Administrador" package ="Administrador" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "CE" description ="Efferent Coupling">
+      <Values per = "packageFragment" avg = "0,8" stddev = "0,4" max = "1">
+         <Value name="(default package)" package ="(default package)" value ="1"/>
+         <Value name="Auditor" package ="Auditor" value ="1"/>
+         <Value name="Investigador" package ="Investigador" value ="1"/>
+         <Value name="login" package ="login" value ="1"/>
+         <Value name="Administrador" package ="Administrador" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMI" description ="Instability">
+      <Values per = "packageFragment" avg = "0,667" stddev = "0,279" max = "1">
+         <Value name="(default package)" package ="(default package)" value ="1"/>
+         <Value name="Administrador" package ="Administrador" value ="1"/>
+         <Value name="Investigador" package ="Investigador" value ="0,5"/>
+         <Value name="login" package ="login" value ="0,5"/>
+         <Value name="Auditor" package ="Auditor" value ="0,333"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMA" description ="Abstractness">
+      <Values per = "packageFragment" avg = "0" stddev = "0" max = "0">
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+         <Value name="Administrador" package ="Administrador" value ="0"/>
+         <Value name="Auditor" package ="Auditor" value ="0"/>
+         <Value name="Investigador" package ="Investigador" value ="0"/>
+         <Value name="login" package ="login" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMD" description ="Normalized Distance">
+      <Values per = "packageFragment" avg = "0,333" stddev = "0,279" max = "0,667">
+         <Value name="Auditor" package ="Auditor" value ="0,667"/>
+         <Value name="Investigador" package ="Investigador" value ="0,5"/>
+         <Value name="login" package ="login" value ="0,5"/>
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+         <Value name="Administrador" package ="Administrador" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "DIT" description ="Depth of Inheritance Tree">
+      <Values per = "type" avg = "4,261" stddev = "2,381" max = "6">
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="6"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="6"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="6"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="6"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="6"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="6"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="6"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="6"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="1"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="1"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="1"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="1"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="User" source ="User.java" package ="login" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "WMC" description ="Weighted methods per Class" max ="50">
+      <Values per = "type" total = "144" avg = "6,261" stddev = "6,873" max = "33">
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="33"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="15"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="13"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="11"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="10"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="9"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="9"/>
+         <Value name="User" source ="User.java" package ="login" value ="8"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="7"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="5"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="5"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="4"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="3"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="3"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="3"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="3"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="3"/>
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="2"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="2"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="2"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="2"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="2"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="2"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSC" description ="Number of Children">
+      <Values per = "type" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="0"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="0"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="User" source ="User.java" package ="login" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NORM" description ="Number of Overridden Methods">
+      <Values per = "type" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="0"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="0"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="User" source ="User.java" package ="login" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "LCOM" description ="Lack of Cohesion of Methods">
+      <Values per = "type" avg = "0,215" stddev = "0,331" max = "0,833">
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="0,833"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="0,812"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="0,8"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="0,75"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0,6"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="0,583"/>
+         <Value name="User" source ="User.java" package ="login" value ="0,571"/>
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOF" description ="Number of Attributes">
+      <Values per = "type" total = "101" avg = "4,391" stddev = "2,059" max = "8">
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="8"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="8"/>
+         <Value name="User" source ="User.java" package ="login" value ="7"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="6"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="6"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="6"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="6"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="6"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="5"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="5"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="5"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="4"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="4"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="4"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="3"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="3"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="2"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="2"/>
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSF" description ="Number of Static Attributes">
+      <Values per = "type" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="0"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="0"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="User" source ="User.java" package ="login" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOM" description ="Number of Methods" max ="15">
+      <Values per = "type" total = "75" avg = "3,261" stddev = "3,467" max = "13">
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="13"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="11"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="9"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="9"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="4"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="3"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="2"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="2"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="2"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="2"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="2"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="2"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="2"/>
+         <Value name="User" source ="User.java" package ="login" value ="2"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="2"/>
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="1"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSM" description ="Number of Static Methods">
+      <Values per = "type" total = "10" avg = "0,435" stddev = "0,496" max = "1">
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="1"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="0"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="0"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="User" source ="User.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "SIX" description ="Specialization Index">
+      <Values per = "type" avg = "0" stddev = "0" max = "0">
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[" source ="Admin_Gestao.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[" source ="Admin_Gestao_Users.java" package ="Administrador" value ="0"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2" source ="Aud_Gestao.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[" source ="Aud_Gestao_SID.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="0"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="0"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2" source ="Inv_Gestao.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="0"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="0"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="0"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="login" value ="0"/>
+         <Value name="User" source ="User.java" package ="login" value ="0"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~initialize[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[" source ="Login_ES.java" package ="(default package)" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOC" description ="Number of Classes">
+      <Values per = "packageFragment" total = "23" avg = "4,6" stddev = "2,728" max = "8">
+         <Value name="Administrador" package ="Administrador" value ="8"/>
+         <Value name="Investigador" package ="Investigador" value ="7"/>
+         <Value name="Auditor" package ="Auditor" value ="5"/>
+         <Value name="login" package ="login" value ="2"/>
+         <Value name="(default package)" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOI" description ="Number of Interfaces">
+      <Values per = "packageFragment" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="(default package)" package ="(default package)" value ="0"/>
+         <Value name="Administrador" package ="Administrador" value ="0"/>
+         <Value name="Auditor" package ="Auditor" value ="0"/>
+         <Value name="Investigador" package ="Investigador" value ="0"/>
+         <Value name="login" package ="login" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOP" description ="Number of Packages">
+      <Value value="5"/>
+   </Metric>
+   <Metric id = "TLOC" description ="Total Lines of Code" max ="50">
+      <Value value="1768"/>
+   </Metric>
+   <Metric id = "MLOC" description ="Method Lines of Code">
+      <Values per = "method" total = "1190" avg = "14" stddev = "18,847" max = "104">
+         <Value name="Inv_Gestao_Cultura" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="104"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="62"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="53"/>
+         <Value name="initialize" source ="Login_ES.java" package ="(default package)" value ="53"/>
+         <Value name="Aud_Gestao_SID" source ="Aud_Gestao_SID.java" package ="Auditor" value ="51"/>
+         <Value name="Aud_Gestao_SID_Auditor" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="51"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="50"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="48"/>
+         <Value name="initialize" source ="Login_ES.java" package ="login" value ="44"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="42"/>
+         <Value name="Admin_Gestao_Interna_Cultura" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="40"/>
+         <Value name="Inv_Gestao_Perfil" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="39"/>
+         <Value name="procura" source ="Auditor.java" package ="Auditor" value ="36"/>
+         <Value name="procuraMedicoes" source ="Investigador.java" package ="Investigador" value ="34"/>
+         <Value name="Aud_Gestao" source ="Aud_Gestao.java" package ="Auditor" value ="32"/>
+         <Value name="Inv_Gestao" source ="Inv_Gestao.java" package ="Investigador" value ="28"/>
+         <Value name="servidor1" source ="Auditor.java" package ="Auditor" value ="26"/>
+         <Value name="servidor2" source ="Auditor.java" package ="Auditor" value ="26"/>
+         <Value name="LogIn" source ="User.java" package ="login" value ="26"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[#actionPerformed" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="24"/>
+         <Value name="Admin_Gestao_Culturas" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="19"/>
+         <Value name="Aud_Gestao_SID.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao_SID.java" package ="Auditor" value ="17"/>
+         <Value name="Aud_Gestao_SID_Auditor.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="17"/>
+         <Value name="findID" source ="Investigador.java" package ="Investigador" value ="16"/>
+         <Value name="insereMedicao" source ="Investigador.java" package ="Investigador" value ="16"/>
+         <Value name="Admin_Gestao" source ="Admin_Gestao.java" package ="Administrador" value ="15"/>
+         <Value name="Admin_Gestao_Users" source ="Admin_Gestao_Users.java" package ="Administrador" value ="15"/>
+         <Value name="apagaMedicao" source ="Investigador.java" package ="Investigador" value ="14"/>
+         <Value name="Investigador" source ="Investigador.java" package ="Investigador" value ="12"/>
+         <Value name="adicionaCulturas" source ="Investigador.java" package ="Investigador" value ="12"/>
+         <Value name="Inv_Gestao_Cultura.anonymous#~QInvestigador;[!2#actionPerformed" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="11"/>
+         <Value name="main" source ="Admin_Gestao.java" package ="Administrador" value ="10"/>
+         <Value name="main" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="10"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="10"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="10"/>
+         <Value name="main" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="10"/>
+         <Value name="main" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="10"/>
+         <Value name="main" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="10"/>
+         <Value name="main" source ="Admin_Gestao_Users.java" package ="Administrador" value ="10"/>
+         <Value name="procura" source ="Investigador.java" package ="Investigador" value ="10"/>
+         <Value name="main" source ="Login_ES.java" package ="login" value ="10"/>
+         <Value name="main" source ="Login_ES.java" package ="(default package)" value ="10"/>
+         <Value name="Auditor" source ="Auditor.java" package ="Auditor" value ="9"/>
+         <Value name="procuraIdCultura" source ="Investigador.java" package ="Investigador" value ="9"/>
+         <Value name="procuraVariavel" source ="Investigador.java" package ="Investigador" value ="9"/>
+         <Value name="Admin_Gestao.anonymous#~main~\[QString;[#run" source ="Admin_Gestao.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Culturas.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Medicoes.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Culturas_Medicoes_Editar.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Medicoes_Editar.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Culturas_Variaveis.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Culturas_Variaveis.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Interna_Cultura.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Interna_Cultura.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Interna_Cultura_Criar.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Interna_Cultura_Criar.java" package ="Administrador" value ="6"/>
+         <Value name="Admin_Gestao_Users.anonymous#~main~\[QString;[#run" source ="Admin_Gestao_Users.java" package ="Administrador" value ="6"/>
+         <Value name="Log" source ="Log.java" package ="Auditor" value ="6"/>
+         <Value name="Login_ES.anonymous#~initialize[#actionPerformed" source ="Login_ES.java" package ="login" value ="6"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[#run" source ="Login_ES.java" package ="login" value ="6"/>
+         <Value name="Login_ES.anonymous#~main~\[QString;[#run" source ="Login_ES.java" package ="(default package)" value ="6"/>
+         <Value name="run" source ="Aud_Gestao.java" package ="Auditor" value ="5"/>
+         <Value name="run" source ="Aud_Gestao_SID.java" package ="Auditor" value ="5"/>
+         <Value name="run" source ="Aud_Gestao_SID_Auditor.java" package ="Auditor" value ="5"/>
+         <Value name="run" source ="Inv_Gestao.java" package ="Investigador" value ="5"/>
+         <Value name="run" source ="Inv_Gestao_Cultura.java" package ="Investigador" value ="5"/>
+         <Value name="run" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="5"/>
+         <Value name="run" source ="Inv_Gestao_Perfil.java" package ="Investigador" value ="5"/>
+         <Value name="Medicoes" source ="Medicoes.java" package ="Investigador" value ="5"/>
+         <Value name="Cultura" source ="Cultura.java" package ="Investigador" value ="4"/>
+         <Value name="atualizaListaMedicoes" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="4"/>
+         <Value name="Inv_Gestao_Cultura_Pesquisa.anonymous#~QInvestigador;~QDefaultListModel\&lt;QString;&gt;;~QString;~QString;[#actionPerformed" source ="Inv_Gestao_Cultura_Pesquisa.java" package ="Investigador" value ="3"/>
+         <Value name="User" source ="User.java" package ="login" value ="3"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[!2#actionPerformed" source ="Aud_Gestao.java" package ="Auditor" value ="2"/>
+         <Value name="Aud_Gestao.anonymous#~QAuditor;[#actionPerformed" source ="Aud_Gestao.java" package ="Auditor" value ="2"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[!2#actionPerformed" source ="Inv_Gestao.java" package ="Investigador" value ="2"/>
+         <Value name="Inv_Gestao.anonymous#~QInvestigador;[#actionPerformed" source ="Inv_Gestao.java" package ="Investigador" value ="2"/>
+         <Value name="getData" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getHora" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getMensagem" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getMigracao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getOperacao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getUsername" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setData" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setHora" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setMensagem" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setMigracao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setOperacao" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="setUsername" source ="Log.java" package ="Auditor" value ="1"/>
+         <Value name="getDescricao_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getId_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getNome_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getUsername" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setDescricao_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setId_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setNome_cultura" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="setUsername" source ="Cultura.java" package ="Investigador" value ="1"/>
+         <Value name="getData" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getId_cultura" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getId_variavel" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getNumero_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="getValor_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setData" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setId_cultura" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setId_variavel" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setNumero_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="setValor_medicao" source ="Medicoes.java" package ="Investigador" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="login" value ="1"/>
+         <Value name="Login_ES" source ="Login_ES.java" package ="(default package)" value ="1"/>
+         <Value name="Login_ES.anonymous#~initialize[#actionPerformed" source ="Login_ES.java" package ="(default package)" value ="1"/>
+      </Values>
+   </Metric>
+   </Metrics>
