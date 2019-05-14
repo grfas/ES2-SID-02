@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Metrics scope="javamongo" type="Project" date="2019-05-14" xmlns="http://metrics.sourceforge.net/2003/Metrics-First-Flat">
+   <Metric id = "VG" description ="McCabe Cyclomatic Complexity" max ="10" hint ="use Extract-method to split the method up">
+      <Values per = "method" avg = "2,588" stddev = "3,532" max = "16" maxinrange="false">
+         <Value name="insert" source ="MongoWrite.java" package ="mongo" value ="16" inrange="false"/>
+         <Value name="splitCell" source ="MongoWrite.java" package ="mongo" value ="5"/>
+         <Value name="messageArrived" source ="Mqtt.java" package ="javamongo" value ="4"/>
+         <Value name="subscribe" source ="Mqtt.java" package ="javamongo" value ="2"/>
+         <Value name="splitHum" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitNameCell" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitSens" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitTmpVar" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="connectionLost" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="deliveryComplete" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="main" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitCellVarNull" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitDat" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitNameCellnull" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitNameTmp" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitTim" source ="MongoWrite.java" package ="mongo" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "PAR" description ="Number of Parameters" max ="5" hint ="Move invoked method or pass an object">
+      <Values per = "method" avg = "1,235" stddev = "1,002" max = "5">
+         <Value name="insert" source ="MongoWrite.java" package ="mongo" value ="5"/>
+         <Value name="messageArrived" source ="Mqtt.java" package ="javamongo" value ="2"/>
+         <Value name="connectionLost" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="deliveryComplete" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="main" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="subscribe" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="splitCellVarNull" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitCell" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitDat" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitHum" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitNameCellnull" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitNameCell" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitNameTmp" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitSens" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitTim" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitTmpVar" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NBD" description ="Nested Block Depth" max ="5" hint ="use Extract-method to split the method up">
+      <Values per = "method" avg = "1,706" stddev = "1,015" max = "5">
+         <Value name="insert" source ="MongoWrite.java" package ="mongo" value ="5"/>
+         <Value name="messageArrived" source ="Mqtt.java" package ="javamongo" value ="3"/>
+         <Value name="subscribe" source ="Mqtt.java" package ="javamongo" value ="2"/>
+         <Value name="splitCell" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitHum" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitNameCell" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitSens" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitTmpVar" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="connectionLost" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="deliveryComplete" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="main" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitCellVarNull" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitDat" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitNameCellnull" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitNameTmp" source ="MongoWrite.java" package ="mongo" value ="1"/>
+         <Value name="splitTim" source ="MongoWrite.java" package ="mongo" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "CA" description ="Afferent Coupling">
+      <Values per = "packageFragment" avg = "0,5" stddev = "0,5" max = "1">
+         <Value name="mongo" package ="mongo" value ="1"/>
+         <Value name="javamongo" package ="javamongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "CE" description ="Efferent Coupling">
+      <Values per = "packageFragment" avg = "1" stddev = "0" max = "1">
+         <Value name="javamongo" package ="javamongo" value ="1"/>
+         <Value name="mongo" package ="mongo" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMI" description ="Instability">
+      <Values per = "packageFragment" avg = "0,75" stddev = "0,25" max = "1">
+         <Value name="javamongo" package ="javamongo" value ="1"/>
+         <Value name="mongo" package ="mongo" value ="0,5"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMA" description ="Abstractness">
+      <Values per = "packageFragment" avg = "0" stddev = "0" max = "0">
+         <Value name="javamongo" package ="javamongo" value ="0"/>
+         <Value name="mongo" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "RMD" description ="Normalized Distance">
+      <Values per = "packageFragment" avg = "0,25" stddev = "0,25" max = "0,5">
+         <Value name="mongo" package ="mongo" value ="0,5"/>
+         <Value name="javamongo" package ="javamongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "DIT" description ="Depth of Inheritance Tree">
+      <Values per = "type" avg = "1" stddev = "0" max = "1">
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "WMC" description ="Weighted methods per Class" max ="50">
+      <Values per = "type" total = "44" avg = "22" stddev = "13" max = "35">
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="35"/>
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="9"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSC" description ="Number of Children">
+      <Values per = "type" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="0"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NORM" description ="Number of Overridden Methods">
+      <Values per = "type" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="0"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "LCOM" description ="Lack of Cohesion of Methods">
+      <Values per = "type" avg = "0" stddev = "0" max = "0">
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="0"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOF" description ="Number of Attributes">
+      <Values per = "type" total = "5" avg = "2,5" stddev = "1,5" max = "4">
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="4"/>
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSF" description ="Number of Static Attributes">
+      <Values per = "type" total = "4" avg = "2" stddev = "1" max = "3">
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="3"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOM" description ="Number of Methods" max ="15">
+      <Values per = "type" total = "16" avg = "8" stddev = "4" max = "12">
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="12"/>
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="4"/>
+      </Values>
+   </Metric>
+   <Metric id = "NSM" description ="Number of Static Methods">
+      <Values per = "type" total = "1" avg = "0,5" stddev = "0,5" max = "1">
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "SIX" description ="Specialization Index">
+      <Values per = "type" avg = "0" stddev = "0" max = "0">
+         <Value name="Mqtt" source ="Mqtt.java" package ="javamongo" value ="0"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOC" description ="Number of Classes">
+      <Values per = "packageFragment" total = "2" avg = "1" stddev = "0" max = "1">
+         <Value name="javamongo" package ="javamongo" value ="1"/>
+         <Value name="mongo" package ="mongo" value ="1"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOI" description ="Number of Interfaces">
+      <Values per = "packageFragment" total = "0" avg = "0" stddev = "0" max = "0">
+         <Value name="javamongo" package ="javamongo" value ="0"/>
+         <Value name="mongo" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   <Metric id = "NOP" description ="Number of Packages">
+      <Value value="2"/>
+   </Metric>
+   <Metric id = "TLOC" description ="Total Lines of Code">
+      <Value value="204"/>
+   </Metric>
+   <Metric id = "MLOC" description ="Method Lines of Code" max ="50">
+      <Values per = "method" total = "137" avg = "8,059" stddev = "9,956" max = "35">
+         <Value name="insert" source ="MongoWrite.java" package ="mongo" value ="35"/>
+         <Value name="messageArrived" source ="Mqtt.java" package ="javamongo" value ="26"/>
+         <Value name="subscribe" source ="Mqtt.java" package ="javamongo" value ="20"/>
+         <Value name="splitCell" source ="MongoWrite.java" package ="mongo" value ="16"/>
+         <Value name="splitTmpVar" source ="MongoWrite.java" package ="mongo" value ="8"/>
+         <Value name="splitHum" source ="MongoWrite.java" package ="mongo" value ="7"/>
+         <Value name="splitNameCell" source ="MongoWrite.java" package ="mongo" value ="7"/>
+         <Value name="splitSens" source ="MongoWrite.java" package ="mongo" value ="7"/>
+         <Value name="splitCellVarNull" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitDat" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitNameCellnull" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitNameTmp" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="splitTim" source ="MongoWrite.java" package ="mongo" value ="2"/>
+         <Value name="main" source ="Mqtt.java" package ="javamongo" value ="1"/>
+         <Value name="connectionLost" source ="Mqtt.java" package ="javamongo" value ="0"/>
+         <Value name="deliveryComplete" source ="Mqtt.java" package ="javamongo" value ="0"/>
+         <Value name="MongoWrite" source ="MongoWrite.java" package ="mongo" value ="0"/>
+      </Values>
+   </Metric>
+   </Metrics>
