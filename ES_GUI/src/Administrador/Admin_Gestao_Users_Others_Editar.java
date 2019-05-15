@@ -104,5 +104,17 @@ public class Admin_Gestao_Users_Others_Editar extends JFrame {
 		btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnGuardar.setBounds(50, 416, 106, 34);
 		contentPane.add(btnGuardar);
+		
+		JButton btnAdministrador = new JButton("Administrador");
+		btnAdministrador.setBounds(34, 192, 106, 23);
+		contentPane.add(btnAdministrador);
+		
+		JButton btnInvestigador = new JButton("Investigador");
+		btnInvestigador.setBounds(195, 191, 106, 23);
+		contentPane.add(btnInvestigador);
+		
+		JButton btnInativo = new JButton("Inativo");
+		btnInativo.setBounds(361, 191, 89, 23);
+		contentPane.add(btnInativo);
 	}
 }
