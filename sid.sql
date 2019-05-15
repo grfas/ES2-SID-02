@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Maio-2019 às 04:13
+-- Generation Time: 15-Maio-2019 às 18:45
 -- Versão do servidor: 10.1.39-MariaDB
 -- versão do PHP: 7.3.5
 
@@ -26,15 +26,18 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `altera_privilegios` (IN `atual` VARCHAR(250), IN `nova` VARCHAR(250), IN `utilizador` VARCHAR(250))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cria_admin` (IN `user_account` VARCHAR(250), IN `email` VARCHAR(250), IN `palavra` VARCHAR(250))  NO SQL
 BEGIN
-SET @funcao = CONCAT('REVOKE ''', atual ,''' FROM  ''', utilizador, '''');
+SET @funcao = CONCAT('CREATE USER ', user_account ,'@''localhost'' IDENTIFIED BY  ''', palavra, '''');
 PREPARE method FROM @funcao; 
 EXECUTE method;
-SET @funcao = CONCAT('GRANT ''', nova, ''' TO ''', utilizador, '''@''localhost''');
+
+SET @funcao = CONCAT('GRANT ALL PRIVILEGES ON sid.* TO ''', user_account, '''@''localhost''');
 PREPARE method FROM @funcao; 
 EXECUTE method;
-UPDATE sid_user_permissoes SET permissao = nova WHERE username = utilizador;
+
+INSERT INTO sid_user(`user_name`, `user_password`, `email`) VALUES (user_account , palavra , email);
+INSERT INTO sid_user_permissoes(`username`, `permissao`) VALUES (user_account , 'administrador');
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `cria_auditor` (IN `user_account` VARCHAR(250), IN `palavra` VARCHAR(250), IN `email` VARCHAR(250))  BEGIN
@@ -52,6 +55,36 @@ EXECUTE method;
 
 INSERT INTO sid_user(`user_name`, `user_password`, `email`) VALUES (user_account , palavra , email);
 INSERT INTO sid_user_permissoes(`username`, `permissao`) VALUES (user_account , 'auditor');
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `cria_migrador` (IN `user_account` VARCHAR(250), IN `palavra` VARCHAR(250), IN `email` VARCHAR(250))  NO SQL
+BEGIN
+SET @funcao = CONCAT('CREATE USER ', user_account ,'@''localhost'' IDENTIFIED BY  ''', palavra, '''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+
+SET @funcao = CONCAT('GRANT SELECT, UPDATE ON sid.sid_log TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+
+SET @funcao = CONCAT('GRANT INSERT ON sid2.sid_log TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+
+SET @funcao = CONCAT('GRANT INSERT ON sid.medicoes TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+
+SET @funcao = CONCAT('GRANT INSERT ON sid.alertas TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+
+SET @funcao = CONCAT('GRANT INSERT ON sid.valores_estranhos TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+
+INSERT INTO sid_user(`user_name`, `user_password`, `email`) VALUES (user_account , palavra , email);
+INSERT INTO sid_user_permissoes(`username`, `permissao`) VALUES (user_account , 'migrador');
 END$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `cria_user` (IN `user_account` VARCHAR(50), IN `palavra` VARCHAR(250), IN `email` VARCHAR(250))  MODIFIES SQL DATA
@@ -160,6 +193,45 @@ INSERT INTO SID.SID_LOG (momento_criacao,mensagem,operacao,username) values (SYS
 select * from sid_user;
     END$$
 
+CREATE DEFINER=`root`@`localhost` PROCEDURE `torna_admin` (IN `user_account` VARCHAR(250))  NO SQL
+BEGIN
+SET @funcao = CONCAT('REVOKE ALL PRIVILEGES, GRANT OPTION FROM ', user_account ,'@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('GRANT ALL PRIVILEGES ON sid.* TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('UPDATE sid_user_permissoes SET permissao=''administrador'' WHERE username = ''', user_account, '''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `torna_Investigador` (IN `user_account` VARCHAR(250), IN `email` VARCHAR(250))  NO SQL
+BEGIN
+SET @funcao = CONCAT('REVOKE ALL PRIVILEGES, GRANT OPTION FROM ', user_account ,'@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('GRANT INSERT, UPDATE, DELETE ON sid.variaveis TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('GRANT INSERT, UPDATE, DELETE, SELECT ON sid.variaveis_medidas TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('GRANT INSERT, UPDATE ON sid.cultura TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('GRANT INSERT, DELETE, SELECT ON sid.medicoes TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('GRANT UPDATE ON sid.sid_user TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('UPDATE sid_user_permissoes SET permissao=''investigador'' WHERE username = ''', user_account, '''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+INSERT INTO investigador(`email`, `nome`, `categoria_profissional`) VALUES (email , user_account , 'investigador');
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `variaveis_medidas_select` (IN `id_user` INT UNSIGNED)  MODIFIES SQL DATA
     SQL SECURITY INVOKER
 BEGIN
@@ -252,6 +324,13 @@ CREATE TABLE `investigador` (
   `nome` varchar(100) NOT NULL,
   `categoria_profissional` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `investigador`
+--
+
+INSERT INTO `investigador` (`id_investigador`, `email`, `nome`, `categoria_profissional`) VALUES
+(1, 'user', 'user', 'investigador');
 
 --
 -- Acionadores `investigador`
@@ -371,6 +450,21 @@ CREATE TABLE `sid_log` (
   `migracao` int(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `sid_log`
+--
+
+INSERT INTO `sid_log` (`momento_criacao`, `mensagem`, `operacao`, `username`, `migracao`) VALUES
+('2019-05-15 16:07:49', ' user_name : admin email : admin', 'insert', 'root@localhost', NULL),
+('2019-05-15 16:07:49', 'username: admin id_permissao: administrador', 'insert', 'root@localhost', NULL),
+('2019-05-15 16:08:01', ' user_name : auditor email : auditor', 'insert', 'root@localhost', NULL),
+('2019-05-15 16:08:01', 'username: auditor id_permissao: auditor', 'insert', 'root@localhost', NULL),
+('2019-05-15 16:08:11', ' user_name : migrador email : migrador', 'insert', 'root@localhost', NULL),
+('2019-05-15 16:08:11', 'username: migrador id_permissao: migrador', 'insert', 'root@localhost', NULL),
+('2019-05-15 16:08:19', ' user_name : user email : user', 'insert', 'root@localhost', NULL),
+('2019-05-15 16:08:19', 'id_investigador: 1 email: user', 'insert', 'root@localhost', NULL),
+('2019-05-15 16:08:19', 'username: user id_permissao: investigador', 'insert', 'root@localhost', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -383,6 +477,16 @@ CREATE TABLE `sid_user` (
   `user_password` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `sid_user`
+--
+
+INSERT INTO `sid_user` (`id_user`, `user_name`, `user_password`, `email`) VALUES
+(1, 'admin', 'admin', 'admin'),
+(2, 'auditor', 'auditor', 'auditor'),
+(3, 'migrador', 'migrador', 'migrador'),
+(4, 'user', 'user', 'user');
 
 --
 -- Acionadores `sid_user`
@@ -433,6 +537,16 @@ CREATE TABLE `sid_user_permissoes` (
   `username` varchar(250) DEFAULT NULL,
   `permissao` varchar(250) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `sid_user_permissoes`
+--
+
+INSERT INTO `sid_user_permissoes` (`username`, `permissao`) VALUES
+('admin', 'administrador'),
+('auditor', 'auditor'),
+('migrador', 'migrador'),
+('user', 'investigador');
 
 --
 -- Acionadores `sid_user_permissoes`
@@ -627,7 +741,7 @@ ALTER TABLE `variaveis_medidas`
 -- AUTO_INCREMENT for table `investigador`
 --
 ALTER TABLE `investigador`
-  MODIFY `id_investigador` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_investigador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `medicoes`
@@ -639,7 +753,7 @@ ALTER TABLE `medicoes`
 -- AUTO_INCREMENT for table `sid_user`
 --
 ALTER TABLE `sid_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
