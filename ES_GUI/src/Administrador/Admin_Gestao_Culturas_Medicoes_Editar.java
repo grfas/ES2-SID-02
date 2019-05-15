@@ -15,7 +15,6 @@ import javax.swing.JButton;
 public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -48,11 +47,6 @@ public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblIdMedicao = new JLabel("ID Medicao");
-		lblIdMedicao.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblIdMedicao.setBounds(69, 44, 99, 17);
-		contentPane.add(lblIdMedicao);
-
 		JLabel lblMedicao = new JLabel("Medicao");
 		lblMedicao.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblMedicao.setBounds(69, 72, 99, 17);
@@ -67,11 +61,6 @@ public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 		lblVariavel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblVariavel.setBounds(69, 128, 99, 17);
 		contentPane.add(lblVariavel);
-
-		textField = new JTextField();
-		textField.setBounds(191, 44, 139, 20);
-		contentPane.add(textField);
-		textField.setColumns(10);
 
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);

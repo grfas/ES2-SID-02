@@ -91,7 +91,7 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 		textField_3.setColumns(10);
 		
 		JButton btnPesquisar = new JButton("Pesquisar");
-		btnPesquisar.setBounds(358, 82, 104, 25);
+		btnPesquisar.setBounds(355, 43, 104, 25);
 		contentPane.add(btnPesquisar);
 		
 		textField_4 = new JTextField();

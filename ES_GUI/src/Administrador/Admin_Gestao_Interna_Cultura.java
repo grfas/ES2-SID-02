@@ -70,7 +70,7 @@ public class Admin_Gestao_Interna_Cultura extends JFrame {
 		
 		JButton btnCriarCultura = new JButton("Criar Cultura");
 		btnCriarCultura.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnCriarCultura.setBounds(347, 24, 115, 40);
+		btnCriarCultura.setBounds(344, 89, 115, 23);
 		contentPane.add(btnCriarCultura);
 		
 		JList list = new JList();
@@ -78,7 +78,8 @@ public class Admin_Gestao_Interna_Cultura extends JFrame {
 		contentPane.add(list);
 		
 		JButton btnPesquisar = new JButton("Pesquisar");
-		btnPesquisar.setBounds(329, 100, 89, 23);
+		btnPesquisar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnPesquisar.setBounds(344, 30, 115, 41);
 		contentPane.add(btnPesquisar);
 		
 		JButton btnEditar = new JButton("Editar");
