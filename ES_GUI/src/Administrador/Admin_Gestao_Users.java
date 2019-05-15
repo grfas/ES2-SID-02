@@ -13,27 +13,20 @@ import java.awt.Color;
 public class Admin_Gestao_Users extends JFrame {
 
 	private JPanel contentPane;
+	private Administrador admin;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+
 			public void run() {
 				try {
-					Admin_Gestao_Users frame = new Admin_Gestao_Users();
-					frame.setVisible(true);
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
-	public Admin_Gestao_Users() {
+
+	public Admin_Gestao_Users(Administrador admin) {
+		this.admin = admin;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 500);
 		contentPane = new JPanel();

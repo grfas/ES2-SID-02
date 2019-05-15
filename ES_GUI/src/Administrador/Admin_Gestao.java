@@ -6,34 +6,30 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Investigador.Inv_Gestao_Perfil;
+
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.Color;
 
 public class Admin_Gestao extends JFrame {
 
 	private JPanel contentPane;
-
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Admin_Gestao frame = new Admin_Gestao();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	private Administrador admin;
+	
+	public void run() {
+		try {
+			this.setVisible(true);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public Admin_Gestao() {
+	public Admin_Gestao(Administrador admin) {
+		this.admin = admin;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -41,15 +37,34 @@ public class Admin_Gestao extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JButton btnGestaoDeCulturas = new JButton("Gestao de Culturas");
 		btnGestaoDeCulturas.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnGestaoDeCulturas.setBounds(162, 110, 165, 83);
 		contentPane.add(btnGestaoDeCulturas);
-		
+
 		JButton btnGestaoDeUtilizadores = new JButton("Gestao de Utilizadores");
 		btnGestaoDeUtilizadores.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnGestaoDeUtilizadores.setBounds(162, 270, 165, 83);
 		contentPane.add(btnGestaoDeUtilizadores);
+		
+		btnGestaoDeCulturas.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Admin_Gestao_Culturas agc = new Admin_Gestao_Culturas(admin);
+				agc.run();
+			}
+		});
+		
+		btnGestaoDeUtilizadores.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Admin_Gestao_Users agc = new Admin_Gestao_Users(admin);
+				agc.run();
+			}
+		});
+		
 	}
 }

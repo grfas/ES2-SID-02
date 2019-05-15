@@ -48,7 +48,7 @@ public class User {
 			}
 
 			else if (this.permissao.equals("administrador")) {
-
+				new Administrador.Administrador(username, password, con);
 			}
 
 		} catch (Exception e) {

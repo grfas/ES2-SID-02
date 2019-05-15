@@ -13,11 +13,8 @@ public class Investigador {
 
 	private int id_investigador;
 	private String email;
-
-
 	private String username;
 	private String password;
-	private Inv_Gestao inv;
 	public ArrayList<Cultura> culturas = new ArrayList<Cultura>();
 	public ArrayList<Medicoes> lista = new ArrayList<Medicoes>();
 	public ArrayList<Integer> listaVariaveis = new ArrayList<Integer>();
@@ -25,7 +22,7 @@ public class Investigador {
 	public Investigador(String username, String password, Connection con) {
 		this.username = username;
 		this.password = password;
-		this.inv = new Inv_Gestao(this);
+		Inv_Gestao inv = new Inv_Gestao(this);
 		inv.run();
 		try {
 			findID(con);
