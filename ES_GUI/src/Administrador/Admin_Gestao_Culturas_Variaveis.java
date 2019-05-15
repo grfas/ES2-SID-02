@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 
@@ -112,9 +114,14 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 		btnGuardar.setBounds(34, 427, 89, 23);
 		contentPane.add(btnGuardar);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(44, 270, 396, 149);
+		contentPane.add(scrollPane);
+		
 		JList list = new JList();
-		list.setBounds(44, 270, 396, 149);
-		contentPane.add(list);
+		scrollPane.setViewportView(list);
 		
 		JButton btnApagar = new JButton("Apagar");
 		btnApagar.setBounds(256, 427, 89, 23);

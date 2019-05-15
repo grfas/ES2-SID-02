@@ -1,22 +1,24 @@
 package Administrador;
 
+import java.awt.BorderLayout;
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JList;
-import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.JButton;
+import java.awt.Color;
 
-@SuppressWarnings("serial")
-public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
+public class Admin_Gestao_Users_Others_Editar extends JFrame {
 
 	private JPanel contentPane;
+	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -28,7 +30,7 @@ public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Admin_Gestao_Culturas_Medicoes_Editar frame = new Admin_Gestao_Culturas_Medicoes_Editar();
+					Admin_Gestao_Users_Others_Editar frame = new Admin_Gestao_Users_Others_Editar();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -40,7 +42,7 @@ public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Admin_Gestao_Culturas_Medicoes_Editar() {
+	public Admin_Gestao_Users_Others_Editar() {
 //		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -48,53 +50,59 @@ public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		JLabel lblMedicao = new JLabel("Medicao");
-		lblMedicao.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMedicao.setBounds(69, 72, 99, 17);
-		contentPane.add(lblMedicao);
-
-		JLabel lblCultura = new JLabel("Cultura");
-		lblCultura.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCultura.setBounds(69, 100, 99, 17);
-		contentPane.add(lblCultura);
-
-		JLabel lblVariavel = new JLabel("Variavel");
-		lblVariavel.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblVariavel.setBounds(69, 128, 99, 17);
-		contentPane.add(lblVariavel);
-
+		
+		JLabel lblUsername = new JLabel("UserName");
+		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblUsername.setBounds(63, 44, 62, 26);
+		contentPane.add(lblUsername);
+		
+		JLabel lblPassword = new JLabel("Password");
+		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblPassword.setBounds(63, 81, 62, 26);
+		contentPane.add(lblPassword);
+		
+		JLabel lblEmail = new JLabel("E-mail");
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblEmail.setBounds(63, 118, 62, 26);
+		contentPane.add(lblEmail);
+		
+		JLabel lblCategoriaProfissional = new JLabel("Categoria Profissional");
+		lblCategoriaProfissional.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblCategoriaProfissional.setBounds(63, 155, 128, 26);
+		contentPane.add(lblCategoriaProfissional);
+		
+		textField = new JTextField();
+		textField.setBounds(200, 49, 232, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
 		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(191, 72, 139, 20);
+		textField_1.setBounds(200, 86, 232, 20);
 		contentPane.add(textField_1);
-
+		textField_1.setColumns(10);
+		
 		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(191, 100, 139, 20);
+		textField_2.setBounds(200, 123, 232, 20);
 		contentPane.add(textField_2);
-
+		textField_2.setColumns(10);
+		
 		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(191, 128, 139, 20);
+		textField_3.setBounds(201, 160, 231, 20);
 		contentPane.add(textField_3);
+		textField_3.setColumns(10);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
-		scrollPane.setBounds(69, 186, 370, 189);
+		scrollPane.setBounds(46, 230, 396, 162);
 		contentPane.add(scrollPane);
-
+		
 		JList list = new JList();
 		scrollPane.setViewportView(list);
-
-		JButton btnApagar = new JButton("Apagar");
-		btnApagar.setBounds(350, 400, 89, 23);
-		contentPane.add(btnApagar);
-
+		
 		JButton btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(69, 400, 89, 23);
+		btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnGuardar.setBounds(50, 416, 106, 34);
 		contentPane.add(btnGuardar);
 	}
-
 }

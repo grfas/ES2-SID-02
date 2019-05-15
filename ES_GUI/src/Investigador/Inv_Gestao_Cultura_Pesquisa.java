@@ -11,6 +11,8 @@ import javax.swing.JList;
 import java.awt.Color;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 @SuppressWarnings("serial")
 public class Inv_Gestao_Cultura_Pesquisa extends JFrame {
@@ -76,10 +78,15 @@ public class Inv_Gestao_Cultura_Pesquisa extends JFrame {
 		lblnomevariavel.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		lblnomevariavel.setBounds(180, 89, 111, 23);
 		contentPane.add(lblnomevariavel);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(62, 145, 375, 224);
+		contentPane.add(scrollPane);
 
 		JList<String> list = new JList<String>(listaMedicoes);
-		list.setBounds(62, 145, 375, 224);
-		contentPane.add(list);
+		scrollPane.setViewportView(list);
 
 		JLabel lblMedicoes = new JLabel("Medicoes :");
 		lblMedicoes.setBounds(62, 129, 61, 14);

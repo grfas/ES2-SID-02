@@ -12,6 +12,8 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 public class Admin_Gestao_Interna_Cultura extends JFrame {
 
@@ -73,9 +75,14 @@ public class Admin_Gestao_Interna_Cultura extends JFrame {
 		btnCriarCultura.setBounds(344, 89, 115, 23);
 		contentPane.add(btnCriarCultura);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(49, 134, 365, 237);
+		contentPane.add(scrollPane);
+		
 		JList list = new JList();
-		list.setBounds(49, 134, 365, 237);
-		contentPane.add(list);
+		scrollPane.setViewportView(list);
 		
 		JButton btnPesquisar = new JButton("Pesquisar");
 		btnPesquisar.setFont(new Font("Tahoma", Font.PLAIN, 14));

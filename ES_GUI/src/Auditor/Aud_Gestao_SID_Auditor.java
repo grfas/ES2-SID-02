@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JList;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
 
 @SuppressWarnings("serial")
 public class Aud_Gestao_SID_Auditor extends JFrame {
@@ -56,8 +58,6 @@ public class Aud_Gestao_SID_Auditor extends JFrame {
 		btnPesquisar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnPesquisar.setBounds(267, 53, 122, 30);
 		contentPane.add(btnPesquisar);
-		JList<String> list = new JList<String>(listaLogs);
-		list.setBounds(42, 149, 377, 263);
 
 		ArrayList<Log> listaTemp = aud.servidor2();
 		for (Log l : listaTemp) {
@@ -65,8 +65,14 @@ public class Aud_Gestao_SID_Auditor extends JFrame {
 					+ "  " + l.getMensagem();
 			listaLogs.addElement(s);
 		}
-
-		contentPane.add(list);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+		scrollPane.setBounds(42, 149, 377, 263);
+		contentPane.add(scrollPane);
+		JList<String> list = new JList<String>(listaLogs);
+		scrollPane.setViewportView(list);
 
 		JLabel lblBaseDeDados = new JLabel("Base de Dados : SID 2");
 		lblBaseDeDados.setBounds(42, 11, 146, 23);
