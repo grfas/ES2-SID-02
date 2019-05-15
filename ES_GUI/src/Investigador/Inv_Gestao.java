@@ -31,7 +31,7 @@ public class Inv_Gestao extends JFrame {
 	 */
 	public Inv_Gestao(Investigador inv) {
 		this.setInv(inv);
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.GRAY);
