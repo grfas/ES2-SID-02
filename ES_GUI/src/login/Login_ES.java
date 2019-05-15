@@ -48,7 +48,7 @@ public class Login_ES {
 		JLabel lblUsername = new JLabel("USERNAME : ");
 
 		JLabel lblPassword = new JLabel("PASSWORD :");
-
+ 
 		textField = new JTextField();
 		textField.setColumns(10);
 
