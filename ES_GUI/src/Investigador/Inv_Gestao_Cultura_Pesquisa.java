@@ -51,7 +51,7 @@ public class Inv_Gestao_Cultura_Pesquisa extends JFrame {
 			this.c = c;
 		}
 		this.listaMedicoes = listaMedicoes;
-//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);

@@ -44,7 +44,7 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 	 * Create the frame.
 	 */
 	public Admin_Gestao_Culturas_Variaveis() {
-//		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);

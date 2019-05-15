@@ -2,6 +2,7 @@ package Auditor;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -30,7 +31,7 @@ public class Aud_Gestao extends JFrame implements Runnable {
 	 */
 	public Aud_Gestao(Auditor aud) {
 		this.setAuditor(aud);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 		setBounds(100, 100, 412, 434);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);

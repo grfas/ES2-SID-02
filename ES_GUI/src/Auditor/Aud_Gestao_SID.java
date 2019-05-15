@@ -16,6 +16,7 @@ import javax.swing.JButton;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.WindowConstants;
 
 @SuppressWarnings("serial")
 public class Aud_Gestao_SID extends JFrame {
@@ -42,6 +43,8 @@ public class Aud_Gestao_SID extends JFrame {
 	 */
 	public Aud_Gestao_SID(Auditor aud) {
 		this.setAud(aud);
+		setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+
 		setBackground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 500);

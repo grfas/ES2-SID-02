@@ -43,7 +43,7 @@ public class Aud_Gestao_SID_Auditor extends JFrame {
 	public Aud_Gestao_SID_Auditor(Auditor aud) {
 		this.setAuditor(aud);
 		setBackground(Color.LIGHT_GRAY);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.LIGHT_GRAY);
