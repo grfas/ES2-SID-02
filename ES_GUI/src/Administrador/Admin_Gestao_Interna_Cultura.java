@@ -12,6 +12,7 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
+@SuppressWarnings("serial")
 public class Admin_Gestao_Interna_Cultura extends JFrame {
 
 	private JPanel contentPane;

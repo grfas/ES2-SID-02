@@ -1,20 +1,15 @@
 package Administrador;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import Investigador.Inv_Gestao_Perfil;
-
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 
+@SuppressWarnings("serial")
 public class Admin_Gestao extends JFrame {
 
 	private JPanel contentPane;
@@ -29,7 +24,7 @@ public class Admin_Gestao extends JFrame {
 	}
 
 	public Admin_Gestao(Administrador admin) {
-		this.admin = admin;
+		this.setAdmin(admin);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -66,5 +61,13 @@ public class Admin_Gestao extends JFrame {
 			}
 		});
 		
+	}
+
+	public Administrador getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(Administrador admin) {
+		this.admin = admin;
 	}
 }

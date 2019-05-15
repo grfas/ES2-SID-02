@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.Color;
 
+@SuppressWarnings("serial")
 public class Admin_Gestao_Culturas extends JFrame {
 
 	private JPanel contentPane;
@@ -26,7 +27,7 @@ public class Admin_Gestao_Culturas extends JFrame {
 
 
 	public Admin_Gestao_Culturas(Administrador admin) {
-		this.admin = admin;
+		this.setAdmin(admin);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -77,6 +78,18 @@ public class Admin_Gestao_Culturas extends JFrame {
 			}
 		});
 		
+	}
+
+
+
+	public Administrador getAdmin() {
+		return admin;
+	}
+
+
+
+	public void setAdmin(Administrador admin) {
+		this.admin = admin;
 	}
 
 }

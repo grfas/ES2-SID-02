@@ -3,6 +3,9 @@ package Administrador;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Investigador.Cultura;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JComboBox;
@@ -40,7 +43,12 @@ public class Admin_Gestao_Culturas_Medicoes extends JFrame {
 		lblCultura.setBounds(78, 45, 66, 25);
 		contentPane.add(lblCultura);
 		
-		JComboBox comboBox = new JComboBox();
+		JComboBox<String> comboBox = new JComboBox<String>();
+		comboBox.addItem("   ");
+		for (Cultura c : admin.culturas()) {
+			comboBox.addItem(Integer.toString(c.getId_cultura()));
+		}
+		
 		comboBox.setBounds(185, 45, 96, 29);
 		contentPane.add(comboBox);
 		
@@ -85,7 +93,7 @@ public class Admin_Gestao_Culturas_Medicoes extends JFrame {
 		btnInserir.setBounds(199, 312, 112, 31);
 		contentPane.add(btnInserir);
 		
-		JLabel lblaammddHhmmss = new JLabel("(AA-MM-DD HH:MM:SS)");
+		JLabel lblaammddHhmmss = new JLabel("(AAAA-MM-DD HH:MM:SS)");
 		lblaammddHhmmss.setBounds(299, 287, 145, 14);
 		contentPane.add(lblaammddHhmmss);
 	}

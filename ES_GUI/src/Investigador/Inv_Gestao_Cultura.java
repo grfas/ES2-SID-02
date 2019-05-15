@@ -108,7 +108,7 @@ public class Inv_Gestao_Cultura extends JFrame {
 		lblData.setBounds(94, 279, 57, 20);
 		contentPane.add(lblData);
 
-		JLabel lblaammddHhmmss = new JLabel("(AA-MM-DD HH:MM:SS)");
+		JLabel lblaammddHhmmss = new JLabel("(AAAA-MM-DD HH:MM:SS)");
 		lblaammddHhmmss.setBounds(215, 304, 136, 14);
 		contentPane.add(lblaammddHhmmss);
 
