@@ -23,27 +23,19 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private Administrador admin;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+
 			public void run() {
 				try {
-					Admin_Gestao_Culturas_Variaveis frame = new Admin_Gestao_Culturas_Variaveis();
-					frame.setVisible(true);
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
-	public Admin_Gestao_Culturas_Variaveis() {
+	public Admin_Gestao_Culturas_Variaveis(Administrador admin) {
+		this.admin = admin;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
