@@ -277,5 +277,23 @@ public class Administrador {
 		return id_cultura;
 
 	}
+	
+	public int devolveUltimaCultura() {
+		String query = "SELECT id_cultura FROM cultura ORDER BY id_cultura DESC LIMIT 1";
+		int id_cultura = 0;
+		try {
+			Connection con3 = criacon();
+			Statement st2 = con3.createStatement();
+			ResultSet rs2 = st2.executeQuery(query);
+			while (rs2.next()) {
+				if (!rs2.wasNull()) {
+					id_cultura = rs2.getInt("id_cultura");				
+				}
+			}
+		}catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		return id_cultura;
+	}
 
 }

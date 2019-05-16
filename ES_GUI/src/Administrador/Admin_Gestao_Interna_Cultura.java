@@ -126,19 +126,9 @@ public class Admin_Gestao_Interna_Cultura extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if (!list.isSelectionEmpty()) {
-					String entrada = list.getSelectedValue();
-					if (!entrada.equals("Nada a apresentar")) {
-						String[] partida = entrada.split("-");
-						int i = Integer.parseInt(partida[0]);
-						String nome = partida[1];
-						String descricao = partida[2];
-						int responsavel = Integer.parseInt(partida[3]);
-						Admin_Gestao_Interna_Cultura_Criar agice = new Admin_Gestao_Interna_Cultura_Criar(i, nome,
-								descricao, responsavel, admin);
-						agice.run();
-					}
-				}
+				Admin_Gestao_Interna_Cultura_Criar agice = new Admin_Gestao_Interna_Cultura_Criar(admin);
+				agice.run();
+
 			}
 		});
 
@@ -168,18 +158,16 @@ public class Admin_Gestao_Interna_Cultura extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				ArrayList<Cultura> culturas = new ArrayList<Cultura>();
 				if (textField.getText().isEmpty() && !textField_1.getText().isEmpty()) {
-					culturas = admin.pesquisaIdCultura(Integer.parseInt(textField_1.getText()));
+					culturas = admin.pesquisaNomeCultura(textField_1.getText());				}
+				else if (textField_1.getText().isEmpty() && !textField.getText().isEmpty()) {		
+					culturas = admin.pesquisaIdCultura(Integer.parseInt(textField.getText()));
 				}
-
-				else if (textField_1.getText().isEmpty() && !textField.getText().isEmpty()) {
-					culturas = admin.pesquisaNomeCultura(textField.getText());
-				}
-
 				else if (!textField_1.getText().isEmpty() && !textField.getText().isEmpty()) {
-					culturas = admin.pesquisaNomeIdCultura(textField_1.getText(), textField.getText());
+					culturas = admin.pesquisaNomeIdCultura(textField.getText(), textField_1.getText());
 				} else {
-					culturas.clear();
+					culturas = admin.culturas();
 				}
+				lista.clear();
 				for (Cultura v : culturas) {
 					lista.addElement(Integer.toString(v.getId_cultura()) + "-" + v.getNome_cultura() + "-"
 							+ v.getDescricao_cultura() + "-" + Integer.toString(v.getUsername()));

@@ -5,6 +5,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -18,8 +21,6 @@ public class Admin_Gestao_Interna_Cultura_Criar extends JFrame {
 	private JLabel lblResponsavel;
 	private JTextField textField_2;
 	private JButton btnCriar;
-	private JButton btnGuardar;
-
 
 			public void run() {
 				try {
@@ -30,7 +31,7 @@ public class Admin_Gestao_Interna_Cultura_Criar extends JFrame {
 			}
 
 
-	public Admin_Gestao_Interna_Cultura_Criar(int i, String nome, String descricao, int responsavel, Administrador admin) {
+	public Admin_Gestao_Interna_Cultura_Criar(Administrador admin) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -73,11 +74,22 @@ public class Admin_Gestao_Interna_Cultura_Criar extends JFrame {
 		btnCriar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCriar.setBounds(61, 221, 112, 38);
 		contentPane.add(btnCriar);
+
+		btnCriar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String nome = textField.getText();
+				String descricao = textField_1.getText();
+				int responsavel = Integer.parseInt(textField_2.getText());
+				int id_cultura = admin.devolveUltimaCultura() + 1;
+				String query = "INSERT INTO `cultura`(`id_cultura`, `nome_cultura`, `descricao_cultura`, `responsavel`) VALUES ("
+						+ id_cultura + ", '" + nome + "', '" + descricao + "', " + responsavel + ")";
+				admin.executaUpdate(query);
+			}
+		});
 		
-		btnGuardar = new JButton("Guardar");
-		btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnGuardar.setBounds(303, 264, 89, 23);
-		contentPane.add(btnGuardar);
+		
 	}
 
 }
