@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 16-Maio-2019 às 04:13
+-- Generation Time: 16-Maio-2019 às 06:29
 -- Versão do servidor: 10.1.39-MariaDB
 -- versão do PHP: 7.3.5
 
@@ -202,7 +202,12 @@ BEGIN
 SET @funcao = CONCAT('REVOKE ALL PRIVILEGES, GRANT OPTION FROM ', user_account ,'@''localhost''');
 PREPARE method FROM @funcao; 
 EXECUTE method;
-SET @funcao = CONCAT('GRANT ALL PRIVILEGES ON sid.* TO ''', user_account, '''@''localhost''');
+
+SET @funcao = CONCAT('GRANT SELECT ON sid.sid_log TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+
+SET @funcao = CONCAT('GRANT SELECT ON sid2.sid_log TO ''', user_account, '''@''localhost''');
 PREPARE method FROM @funcao; 
 EXECUTE method;
 SET @funcao = CONCAT('UPDATE sid_user_permissoes SET permissao=''administrador'' WHERE username = ''', user_account, '''');
@@ -292,6 +297,15 @@ CREATE TABLE `cultura` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Extraindo dados da tabela `cultura`
+--
+
+INSERT INTO `cultura` (`id_cultura`, `nome_cultura`, `descricao_cultura`, `responsavel`) VALUES
+(1, 'batata', 'plantacao de batata', 1),
+(2, 'tomate ', 'plantacao de tomate', 1),
+(3, 'alface', 'campo de alfaces', 1);
+
+--
 -- Acionadores `cultura`
 --
 DELIMITER $$
@@ -344,7 +358,8 @@ CREATE TABLE `investigador` (
 --
 
 INSERT INTO `investigador` (`id_investigador`, `email`, `nome`, `categoria_profissional`) VALUES
-(1, 'user', 'user', 'investigador');
+(1, 'user', 'user', 'investigador'),
+(2, 'email', 'goncalo', 'investigador');
 
 --
 -- Acionadores `investigador`
@@ -477,7 +492,16 @@ INSERT INTO `sid_log` (`momento_criacao`, `mensagem`, `operacao`, `username`, `m
 ('2019-05-15 16:08:11', 'username: migrador id_permissao: migrador', 'insert', 'root@localhost', NULL),
 ('2019-05-15 16:08:19', ' user_name : user email : user', 'insert', 'root@localhost', NULL),
 ('2019-05-15 16:08:19', 'id_investigador: 1 email: user', 'insert', 'root@localhost', NULL),
-('2019-05-15 16:08:19', 'username: user id_permissao: investigador', 'insert', 'root@localhost', NULL);
+('2019-05-15 16:08:19', 'username: user id_permissao: investigador', 'insert', 'root@localhost', NULL),
+('2019-05-16 02:33:54', 'id_cultura: 1 nome_cultura: batata', 'insert', 'root@localhost', NULL),
+('2019-05-16 02:37:15', 'id_variavel : 1 nome : ph', 'insert', 'root@localhost', NULL),
+('2019-05-16 02:37:15', 'limite_inferior: 10.00 limite_superior: 20.00 id_variavel: 1 id_cultura: 1', 'insert', 'root@localhost', NULL),
+('2019-05-16 02:53:33', 'limite_inferior: 10.00 limite_superior: 20.00 id_variavel: 1 id_cultura: 1', 'delete', 'root@localhost', NULL),
+('2019-05-16 04:00:09', 'id_cultura: 2 nome_cultura: tomate ', 'insert', 'root@localhost', NULL),
+('2019-05-16 04:08:12', 'id_cultura: 3 nome_cultura: alface', 'insert', 'root@localhost', NULL),
+('2019-05-16 04:12:19', ' user_name : goncalo email : email', 'insert', 'root@localhost', NULL),
+('2019-05-16 04:12:19', 'id_investigador: 2 email: email', 'insert', 'root@localhost', NULL),
+('2019-05-16 04:12:19', 'username: goncalo id_permissao: investigador', 'insert', 'root@localhost', NULL);
 
 -- --------------------------------------------------------
 
@@ -500,7 +524,8 @@ INSERT INTO `sid_user` (`id_user`, `user_name`, `user_password`, `email`) VALUES
 (1, 'admin', 'admin', 'admin'),
 (2, 'auditor', 'auditor', 'auditor'),
 (3, 'migrador', 'migrador', 'migrador'),
-(4, 'user', 'user', 'user');
+(4, 'user', 'user', 'user'),
+(5, 'goncalo', 'fruta', 'email');
 
 --
 -- Acionadores `sid_user`
@@ -560,7 +585,8 @@ INSERT INTO `sid_user_permissoes` (`username`, `permissao`) VALUES
 ('admin', 'administrador'),
 ('auditor', 'auditor'),
 ('migrador', 'migrador'),
-('user', 'investigador');
+('user', 'investigador'),
+('goncalo', 'investigador');
 
 --
 -- Acionadores `sid_user_permissoes`
@@ -617,6 +643,13 @@ CREATE TABLE `variaveis` (
   `id_variavel` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `variaveis`
+--
+
+INSERT INTO `variaveis` (`id_variavel`, `nome`) VALUES
+(1, 'ph');
 
 --
 -- Acionadores `variaveis`
@@ -755,7 +788,7 @@ ALTER TABLE `variaveis_medidas`
 -- AUTO_INCREMENT for table `investigador`
 --
 ALTER TABLE `investigador`
-  MODIFY `id_investigador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_investigador` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `medicoes`
@@ -767,7 +800,7 @@ ALTER TABLE `medicoes`
 -- AUTO_INCREMENT for table `sid_user`
 --
 ALTER TABLE `sid_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Constraints for dumped tables
