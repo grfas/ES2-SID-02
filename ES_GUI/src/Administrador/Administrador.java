@@ -11,6 +11,7 @@ import Investigador.Cultura;
 public class Administrador {
 	private String username;
 	private String password;
+	private String email;
 
 	public Administrador(String username, String password, Connection con) {
 		this.username = username;
@@ -38,6 +39,13 @@ public class Administrador {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public ArrayList<VariaveisMedidas> pesquisaVariaveisMedidas(int i) {
@@ -226,6 +234,27 @@ public class Administrador {
 			e.printStackTrace();
 		}
 		return variaveis;
+	}
+	
+	public String findHash(String query,String password) {
+		String hash = null;
+		try {
+			Connection con2 = criacon();
+			Statement st2 = con2.createStatement();
+			ResultSet rs2 = st2.executeQuery(query);
+
+			while (rs2.next()) {
+				if (!rs2.wasNull()) {					
+					hash = rs2.getString("PASSWORD('" + password + "')");
+				}
+			}			
+			con2.close();
+			} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return hash;
+		
 	}
 
 }

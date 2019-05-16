@@ -12,36 +12,27 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 
-public class Admin_Gestao_Interna_Cultura_Criar extends JFrame {
+public class Admin_Gestao_Interna_Cultura_Editar extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JLabel lblResponsavel;
 	private JTextField textField_2;
-	private JButton btnCriar;
 	private JButton btnGuardar;
+	private Administrador admin;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Admin_Gestao_Interna_Cultura_Criar frame = new Admin_Gestao_Interna_Cultura_Criar();
-					frame.setVisible(true);
+					
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public Admin_Gestao_Interna_Cultura_Criar() {
+	
+	public Admin_Gestao_Interna_Cultura_Editar(Administrador admin) {
+		setAdmin(admin);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -80,15 +71,13 @@ public class Admin_Gestao_Interna_Cultura_Criar extends JFrame {
 		contentPane.add(textField_2);
 		textField_2.setColumns(10);
 		
-		btnCriar = new JButton("Criar");
-		btnCriar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnCriar.setBounds(61, 221, 112, 38);
-		contentPane.add(btnCriar);
-		
 		btnGuardar = new JButton("Guardar");
 		btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnGuardar.setBounds(303, 264, 89, 23);
+		btnGuardar.setBounds(156, 256, 142, 43);
 		contentPane.add(btnGuardar);
+	}
+	public void setAdmin(Administrador admin) {
+		this.admin=admin;
 	}
 
 }

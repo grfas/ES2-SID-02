@@ -26,7 +26,7 @@ public class Admin_Gestao_Users extends JFrame {
 
 
 	public Admin_Gestao_Users(Administrador admin) {
-		this.admin = admin;
+		setAdmin(admin);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 450, 500);
 		contentPane = new JPanel();
@@ -44,6 +44,10 @@ public class Admin_Gestao_Users extends JFrame {
 		btnGestaoDeUsers.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnGestaoDeUsers.setBounds(124, 224, 164, 56);
 		contentPane.add(btnGestaoDeUsers);
+	}
+	
+	public void setAdmin(Administrador admin) {
+		this.admin=admin;
 	}
 
 }
