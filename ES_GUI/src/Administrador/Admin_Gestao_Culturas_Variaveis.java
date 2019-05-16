@@ -43,6 +43,9 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 					+ Integer.toString(v.getId_variavel()) + " " + Integer.toString(v.getLimite_inferior()) + " "
 					+ Integer.toString(v.getLimite_superior()));
 		}
+		if(listaVariaveis.isEmpty()) {
+			listaVariaveis.addElement("Nada a apresentar");
+		}
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();

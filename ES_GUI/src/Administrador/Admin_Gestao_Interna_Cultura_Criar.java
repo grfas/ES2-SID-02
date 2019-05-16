@@ -1,8 +1,5 @@
 package Administrador;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -12,6 +9,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 
+@SuppressWarnings("serial")
 public class Admin_Gestao_Interna_Cultura_Criar extends JFrame {
 
 	private JPanel contentPane;
@@ -22,26 +20,17 @@ public class Admin_Gestao_Interna_Cultura_Criar extends JFrame {
 	private JButton btnCriar;
 	private JButton btnGuardar;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
+
 			public void run() {
 				try {
-					Admin_Gestao_Interna_Cultura_Criar frame = new Admin_Gestao_Interna_Cultura_Criar();
-					frame.setVisible(true);
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
-	public Admin_Gestao_Interna_Cultura_Criar() {
+
+	public Admin_Gestao_Interna_Cultura_Criar(int i, String nome, String descricao, int responsavel, Administrador admin) {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
