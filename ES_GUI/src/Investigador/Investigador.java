@@ -248,7 +248,6 @@ public class Investigador {
 			st2.executeQuery(query);	
 			con2.close();
 			} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

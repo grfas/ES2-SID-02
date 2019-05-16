@@ -139,13 +139,19 @@ public class Admin_Gestao_Interna_Cultura extends JFrame {
 				if (!list.isSelectionEmpty()) {
 					String entrada = list.getSelectedValue();
 					if (!entrada.equals("Nada a apresentar")) {
-						String[] partida = entrada.split(" ");
+						String[] partida = entrada.split("-");
 						int i = Integer.parseInt(partida[0]);
+						
 						String query = "DELETE FROM medicoes WHERE id_cultura = " + i;
+						
 						String query1 = "DELETE FROM variaveis_medidas WHERE id_cultura = " + i;
 						String query2 = "DELETE FROM cultura WHERE id_cultura = " + i;
+						System.out.println(query);
+						
 						admin.executaUpdate(query);
+						System.out.println(query1);
 						admin.executaUpdate(query1);
+						System.out.println(query2);
 						admin.executaUpdate(query2);
 					}
 				}

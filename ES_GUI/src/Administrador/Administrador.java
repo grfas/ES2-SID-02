@@ -171,6 +171,15 @@ public class Administrador {
 				this.username, this.password);
 		return con;
 	}
+	
+	public Connection criaconRoot() throws SQLException, ClassNotFoundException {
+		Connection con = null;
+		Class.forName("com.mysql.cj.jdbc.Driver");
+		con = DriverManager.getConnection(
+				"jdbc:mysql://localhost:3306/sid?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=Europe/London",
+				"root", "");
+		return con;
+	}
 
 	public void executaUpdate(String query) {
 		try {
@@ -182,10 +191,31 @@ public class Administrador {
 			e.printStackTrace();
 		}
 	}
-
+	public void executaUpdateRoot(String query) {
+		try {
+			Connection con = criaconRoot();
+			Statement st = con.createStatement();
+			st.executeUpdate(query);
+			con.close();
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void executaQuery(String query) {
 		try {
 			Connection con = criacon();
+			Statement st = con.createStatement();
+			st.executeQuery(query);
+			con.close();
+		} catch (SQLException | ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void executaQueryRoot(String query) {
+		try {
+			Connection con = criaconRoot();
 			Statement st = con.createStatement();
 			st.executeQuery(query);
 			con.close();
@@ -239,7 +269,7 @@ public class Administrador {
 	public String findHash(String query,String password) {
 		String hash = null;
 		try {
-			Connection con2 = criacon();
+			Connection con2 = criaconRoot();
 			Statement st2 = con2.createStatement();
 			ResultSet rs2 = st2.executeQuery(query);
 

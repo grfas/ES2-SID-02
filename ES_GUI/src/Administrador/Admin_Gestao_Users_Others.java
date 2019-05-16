@@ -8,6 +8,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
@@ -18,28 +21,19 @@ public class Admin_Gestao_Users_Others extends JFrame {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
-	private JTextField textField_3;
+	private Administrador admin;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Admin_Gestao_Users_Others frame = new Admin_Gestao_Users_Others();
-					frame.setVisible(true);
+					
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
-
-	/**
-	 * Create the frame.
-	 */
-	public Admin_Gestao_Users_Others() {
+	
+	public Admin_Gestao_Users_Others(Administrador admin) {
+		this.admin=admin;
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -78,24 +72,23 @@ public class Admin_Gestao_Users_Others extends JFrame {
 		textField_2.setBounds(188, 133, 181, 20);
 		contentPane.add(textField_2);
 		
-		JLabel lblCategoriaProfissional = new JLabel("Categoria Profissional");
-		lblCategoriaProfissional.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblCategoriaProfissional.setBounds(46, 182, 128, 24);
-		contentPane.add(lblCategoriaProfissional);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(188, 186, 181, 20);
-		contentPane.add(textField_3);
-		
-		JButton btnPesquisar = new JButton("Pesquisar");
-		btnPesquisar.setBounds(385, 27, 89, 23);
-		contentPane.add(btnPesquisar);
-		
-		JButton btnCriar = new JButton("Criar");
+		JButton btnCriar = new JButton("Criar Investigador");
 		btnCriar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnCriar.setBounds(162, 302, 128, 51);
 		contentPane.add(btnCriar);
+		
+		
+		btnCriar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String query = "CALL cria_user('"+textField.getText().toString()+"','"+textField_1.getText().toString()+
+						"','"+textField_2.getText().toString()+"')";
+				admin.executaQueryRoot(query);
+			}
+		});
 	}
+	
+	
 
 }
