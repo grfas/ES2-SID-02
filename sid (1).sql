@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 15-Maio-2019 às 18:45
+-- Generation Time: 16-Maio-2019 às 04:13
 -- Versão do servidor: 10.1.39-MariaDB
 -- versão do PHP: 7.3.5
 
@@ -32,7 +32,11 @@ SET @funcao = CONCAT('CREATE USER ', user_account ,'@''localhost'' IDENTIFIED BY
 PREPARE method FROM @funcao; 
 EXECUTE method;
 
-SET @funcao = CONCAT('GRANT ALL PRIVILEGES ON sid.* TO ''', user_account, '''@''localhost''');
+SET @funcao = CONCAT('GRANT ALL PRIVILEGES ON *.* TO ''', user_account, '''@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+
+SET @funcao = CONCAT('GRANT GRANT OPTION ON *.* TO ''', user_account, '''@''localhost''');
 PREPARE method FROM @funcao; 
 EXECUTE method;
 
@@ -202,6 +206,16 @@ SET @funcao = CONCAT('GRANT ALL PRIVILEGES ON sid.* TO ''', user_account, '''@''
 PREPARE method FROM @funcao; 
 EXECUTE method;
 SET @funcao = CONCAT('UPDATE sid_user_permissoes SET permissao=''administrador'' WHERE username = ''', user_account, '''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+END$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `torna_inativo` (IN `user_account` VARCHAR(250))  NO SQL
+BEGIN
+SET @funcao = CONCAT('REVOKE ALL PRIVILEGES, GRANT OPTION FROM ', user_account ,'@''localhost''');
+PREPARE method FROM @funcao; 
+EXECUTE method;
+SET @funcao = CONCAT('UPDATE sid_user_permissoes SET permissao=''inativo'' WHERE username = ''', user_account, '''');
 PREPARE method FROM @funcao; 
 EXECUTE method;
 END$$
