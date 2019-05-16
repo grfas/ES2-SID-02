@@ -7,7 +7,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
 public class MongoWrite {
-	private static int tempo = 5000;
+	private static int tempo = 10000;
 
 	public MongoWrite() {
 
@@ -39,7 +39,7 @@ public class MongoWrite {
 						.append("TimeStamp", splitDat(dat) + " " + splitTim(tim)).append("migracao", 0);
 
 				Document docCell = new Document("id_sensor", splitNameCell(cell)).append("variavel", splitCell(cell))
-						.append("TimeStamp", splitDat(dat) + "  " + splitTim(tim)).append("migracao", 0);
+						.append("TimeStamp", splitDat(dat) + " " + splitTim(tim)).append("migracao", 0);
 
 				listaDeDocs.add(docTmp);
 
