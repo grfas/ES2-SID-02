@@ -256,5 +256,26 @@ public class Administrador {
 		return hash;
 		
 	}
+	
+	public int procuraNomeCultura(String i) {
+		int id_cultura = 0;
+		Connection con3;
+		try {
+			con3 = criacon();
+			Statement st2 = con3.createStatement();
+			String query = "SELECT * FROM cultura WHERE nome_cultura = '" + i + "'";
+			ResultSet rs2 = st2.executeQuery(query);
+			while (rs2.next()) {
+				if (!rs2.wasNull()) {
+					id_cultura = rs2.getInt("id_cultura");				
+				}
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return id_cultura;
+
+	}
 
 }

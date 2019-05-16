@@ -166,12 +166,19 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 				
 				else {
 					int id = Integer.parseInt(textField.getText());
-					String nome = textField_1.getText();
+					String nomeVariavel = textField_1.getText();
 					int superior = Integer.parseInt(textField_2.getText());
 					int inferior = Integer.parseInt(textField_3.getText());
-					String query = "INSERT ON variaveis_medidas (id_variavel, id_cultura, limite_inferior, limite_superior) VALUES (" + id + ", " + id_cultura + ", " +
+					String nome = textField_4.getText();
+					int id_cultura = admin.procuraNomeCultura(nome);
+					String query = "INSERT INTO variaveis (id_variavel, nome) VALUES (" + id + ", '" + nomeVariavel + "')";
+					String query1 = "INSERT INTO variaveis_medidas (id_variavel, id_cultura, limite_inferior, limite_superior) VALUES (" + id + ", " + id_cultura + ", " +
 					inferior + " , " + superior + " )";
+					System.out.println(query);
+					admin.executaUpdate(query);
+					admin.executaUpdate(query1);
 				}
+				
 			}
 		});
 	}
