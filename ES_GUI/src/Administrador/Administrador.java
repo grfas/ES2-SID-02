@@ -82,8 +82,8 @@ public class Administrador {
 				if (!rs.wasNull()) {
 					int id_cultura = rs.getInt("id_cultura");
 					int id_variavel = rs.getInt("id_variavel");
-					int limite_inferior = rs.getInt("id_cultura");
-					int limite_superior = rs.getInt("id_variavel");
+					int limite_inferior = rs.getInt("limite_inferior");
+					int limite_superior = rs.getInt("limite_superior");
 					culturas.add(new VariaveisMedidas(id_cultura, id_variavel, limite_inferior, limite_superior));
 				}
 			}

@@ -1,8 +1,5 @@
 package Administrador;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -10,8 +7,6 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
 import javax.swing.JTextField;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -31,6 +26,7 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 	private JTextField textField_4;
 	private Administrador admin;
 	private DefaultListModel<String> listaVariaveis = new DefaultListModel<String>();
+	JList<String> list = new JList<String>(listaVariaveis);
 
 	public void run() {
 		try {
@@ -43,8 +39,8 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 	public Admin_Gestao_Culturas_Variaveis(Administrador admin) {
 		this.setAdmin(admin);
 		for (VariaveisMedidas v : admin.pesquisaTodasVariaveisMedidas()) {
-			listaVariaveis.addElement(Integer.toString(v.getId_cultura()) + "    "
-					+ Integer.toString(v.getId_variavel()) + "    " + Integer.toString(v.getLimite_inferior()) + "    "
+			listaVariaveis.addElement(Integer.toString(v.getId_cultura()) + " "
+					+ Integer.toString(v.getId_variavel()) + " " + Integer.toString(v.getLimite_inferior()) + " "
 					+ Integer.toString(v.getLimite_superior()));
 		}
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -122,9 +118,8 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
 		scrollPane.setBounds(44, 270, 396, 149);
 		contentPane.add(scrollPane);
-
-		JList<String> list = new JList<String>(listaVariaveis);
 		scrollPane.setViewportView(list);
+		
 
 		JButton btnApagar = new JButton("Apagar");
 		btnApagar.setBounds(256, 427, 89, 23);
@@ -138,8 +133,8 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 				if (!textField.getText().isEmpty()) {
 					for (VariaveisMedidas v : admin.pesquisaVariaveisMedidas(Integer.parseInt(textField.getText()))) {
 						listaVariaveis.addElement(
-								Integer.toString(v.getId_cultura()) + "    " + Integer.toString(v.getId_variavel())
-										+ "    " + Integer.toString(v.getLimite_inferior()) + "    "
+								Integer.toString(v.getId_cultura()) + " " + Integer.toString(v.getId_variavel())
+										+ " " + Integer.toString(v.getLimite_inferior()) + " "
 										+ Integer.toString(v.getLimite_superior()));
 					}
 				} else {
@@ -179,6 +174,21 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 					admin.executaUpdate(query1);
 				}
 				
+			}
+		});
+		
+		btnApagar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String entrada = list.getSelectedValue();
+				if(!entrada.equals("Nada a apresentar")) {
+					String[] partida = entrada.split(" ");
+					int i = Integer.parseInt(partida[0]);
+					int d = Integer.parseInt(partida[1]);
+					String query = "DELETE FROM variaveis_medidas WHERE id_cultura = " + i + " AND id_variavel = " + d;
+					admin.executaUpdate(query);
+				}		
 			}
 		});
 	}
