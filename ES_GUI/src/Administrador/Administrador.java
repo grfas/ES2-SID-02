@@ -53,7 +53,7 @@ public class Administrador {
 		try {
 			Connection con = criacon();
 			Statement st = con.createStatement();
-			String query = "SELECT * FROM variaveis_medidas WHERE id_variavel = '" + i + "'";
+			String query = "SELECT * FROM variaveis_medidas WHERE id_variavel = '" + i + "'"; 
 			ResultSet rs = st.executeQuery(query);
 			while (rs.next()) {
 				if (!rs.wasNull()) {
