@@ -17,6 +17,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 
@@ -159,10 +160,18 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int id = Integer.parseInt(textField.getText());
-				String nome = textField_1.getText();
-				int superior = Integer.parseInt(textField_2.getText());
-				int inferior = Integer.parseInt(textField_3.getText());
+				if(textField.getText().isEmpty() ||textField_1.getText().isEmpty() ||textField_2.getText().isEmpty() ||textField_3.getText().isEmpty() ) {
+					JOptionPane.showMessageDialog(new JFrame() ,"falta adicionar valores");
+				}
+				
+				else {
+					int id = Integer.parseInt(textField.getText());
+					String nome = textField_1.getText();
+					int superior = Integer.parseInt(textField_2.getText());
+					int inferior = Integer.parseInt(textField_3.getText());
+					String query = "INSERT ON variaveis_medidas (id_variavel, id_cultura, limite_inferior, limite_superior) VALUES (" + id + ", " + id_cultura + ", " +
+					inferior + " , " + superior + " )";
+				}
 			}
 		});
 	}
