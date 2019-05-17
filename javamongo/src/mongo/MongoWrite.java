@@ -6,9 +6,12 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
-public class MongoWrite {
-	private static int tempo = 10000;
+import config.Config;
 
+public class MongoWrite {
+	static Config cfg = new Config();
+	private static String parse =cfg.getProperty("mWaitTime");
+	int tempo = Integer.parseUnsignedInt(parse);
 	public MongoWrite() {
 
 	}
@@ -190,7 +193,7 @@ public class MongoWrite {
 		String join=null;
 		String join2=null;
 		String join3=null;
-		
+		System.out.println("Teste :"+  s);
 		String hora = parts[1];
 		if(hora.length()==2) {
 			String a=hora.replace("\"", "");
@@ -207,13 +210,15 @@ public class MongoWrite {
 			 join2 = min;
 		}
 		String seg = parts[3];
-	
-		if (seg.length() == 2) {
-			String a=seg.replace("\"", "");
+		String seg2 = null;
+		seg2 = seg.replaceAll("\\D+","");
+		System.out.println("Teste:"+seg2);
+		if (seg2.length() == 1) {
+			String a=seg2.replace("\"", "");
 			join3 = 0 + a;
 			
 		} else {
-			String a=seg.replace("\"", "");
+			String a=seg2.replace("\"", "");
 			join3 = a;
 		}
 
@@ -268,7 +273,8 @@ public class MongoWrite {
 	 */
 
 	public String splitCell(String s) {
-
+		System.out.println(s.length());
+		if(s.contains("eth")) {
 		if (s.length() == 23) {
 			String a = s.substring(8, 9);
 			return a;
@@ -282,6 +288,23 @@ public class MongoWrite {
 		} else if (s.length() == 26) {
 			String a = s.substring(8, 12);
 			return a;
+		}
+		}else {
+			if (s.length() == 24) {
+				String a = s.substring(8, 9);
+				return a;
+			} else if (s.length() == 25) {
+				String a = s.substring(8, 10);
+				return a;
+			} else if (s.length() == 26) {
+				String a = s.substring(8, 11);
+				return a;
+
+			} else if (s.length() == 27) {
+				String a = s.substring(8, 12);
+				return a;
+			}
+			
 		}
 		return null;
 	}

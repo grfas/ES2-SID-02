@@ -11,20 +11,27 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
+import config.Config;
 import mongo.MongoWrite;
 
 public class Mqtt implements MqttCallback {
+	  static Config cfg = new Config();
+	 
+	 static final String brokerUrl   = cfg.getProperty("mBrokerName");
+	 static final String clientId = cfg.getProperty("mClientId");
+	 static final String topic = cfg.getProperty("mTopicName");
 
 	MongoWrite wr = new MongoWrite();
+	
 
 	/** The broker url. */
-	private static final String brokerUrl = "tcp://broker.mqtt-dashboard.com:1883";
+	//private static final String brokerUrl = "tcp://iot.eclipse.org:1883";
 
 	/** The client id. */
-	private static final String clientId = "/sid_lab_2019_2";
+	//private static final String clientId = "/sid_lab_2019";
 
 	/** The topic. */
-	private static final String topic = "/sid_lab_2019_2";
+	//private static final String topic = "/sid_lab_2019";
 
 	/**
 	 * The main method.
@@ -127,7 +134,7 @@ public class Mqtt implements MqttCallback {
 		System.out.println("Mqtt msg : " + message.toString());
 
 		String mens = message.toString();
-		if (!(mens.toString().contains("?"))) {
+		if (!(mens.toString().contains("I'm"))) {
 
 			String[] parts = mens.split(Pattern.quote(","));
 			if (parts.length == 5) {
