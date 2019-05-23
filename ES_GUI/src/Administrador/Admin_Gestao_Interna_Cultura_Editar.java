@@ -90,54 +90,50 @@ public class Admin_Gestao_Interna_Cultura_Editar extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				String nome = textField.getText();
-				String descricao = textField_1.getText();
-				int respons = Integer.parseInt(textField_2.getText());
-
 				if (!textField.getText().isEmpty() && textField_1.getText().isEmpty()
 						&& textField_2.getText().isEmpty()) {
-					String query = "UPDATE `cultura` SET `nome_cultura`= '" + nome + "' WHERE id_cultura = " + i;
+					String query = "UPDATE `cultura` SET `nome_cultura`= '" + textField.getText() + "' WHERE id_cultura = " + i;
 					admin.executaUpdate(query);
 				}
 
 				else if (!textField.getText().isEmpty() && textField_1.getText().isEmpty()
 						&& !textField_2.getText().isEmpty()) {
-					String query = "UPDATE `cultura` SET `nome_cultura`= '" + nome + "', `responsavel`= " + respons
+					String query = "UPDATE `cultura` SET `nome_cultura`= '" + textField.getText() + "', `responsavel`= " + Integer.parseInt(textField_2.getText())
 							+ " WHERE id_cultura = " + i;
 					admin.executaUpdate(query);
 				}
 
 				else if (!textField.getText().isEmpty() && !textField_1.getText().isEmpty()
 						&& textField_2.getText().isEmpty()) {
-					String query = "UPDATE `cultura` SET `nome_cultura`= '" + nome + "', `descricao_cultura`= '"
-							+ descricao + "' WHERE id_cultura = " + i;
+					String query = "UPDATE `cultura` SET `nome_cultura`= '" + textField.getText() + "', `descricao_cultura`= '"
+							+ textField_1.getText() + "' WHERE id_cultura = " + i;
 					admin.executaUpdate(query);
 				}
 
 				else if (!textField.getText().isEmpty() && !textField_1.getText().isEmpty()
 						&& !textField_2.getText().isEmpty()) {
-					String query = "UPDATE `cultura` SET `nome_cultura`= '" + nome + "', `responsavel`= " + respons
+					String query = "UPDATE `cultura` SET `nome_cultura`= '" + textField.getText() + "', `responsavel`= " + Integer.parseInt(textField_2.getText())
 							+ ", `descricao_cultura`= '" + descricao + "' WHERE id_cultura = " + i;
 					admin.executaUpdate(query);
 				}
 
 				else if (textField.getText().isEmpty() && textField_1.getText().isEmpty()
 						&& !textField_2.getText().isEmpty()) {
-					String query = "UPDATE `cultura` SET `responsavel`= " + respons + " WHERE id_cultura = " + i;
+					String query = "UPDATE `cultura` SET `responsavel`= " + Integer.parseInt(textField_2.getText()) + " WHERE id_cultura = " + i;
 					admin.executaUpdate(query);
 				}
 
 				else if (textField.getText().isEmpty() && !textField_1.getText().isEmpty()
 						&& textField_2.getText().isEmpty()) {
-					String query = "UPDATE `cultura` SET `descricao_cultura`= '" + descricao + "' WHERE id_cultura = "
+					String query = "UPDATE `cultura` SET `descricao_cultura`= '" + textField_1.getText() + "' WHERE id_cultura = "
 							+ i;
 					admin.executaUpdate(query);
 				}
 
 				else if (textField.getText().isEmpty() && !textField_1.getText().isEmpty()
 						&& !textField_2.getText().isEmpty()) {
-					String query = "UPDATE `cultura` SET `descricao_cultura`= '" + descricao + "', `responsavel`= "
-							+ respons + " WHERE id_cultura = " + i;
+					String query = "UPDATE `cultura` SET `descricao_cultura`= '" + textField_1.getText() + "', `responsavel`= "
+							+ Integer.parseInt(textField_2.getText()) + " WHERE id_cultura = " + i;
 					admin.executaUpdate(query);
 				}
 

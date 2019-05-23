@@ -1,14 +1,19 @@
 package Administrador;
 
-import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Investigador.Medicoes;
+
 import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JTextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JList;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
@@ -17,30 +22,34 @@ import javax.swing.ScrollPaneConstants;
 public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private DefaultListModel<String> listaMedicoes;
+	private Administrador admin;
+	private String c;
+	private String v;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Admin_Gestao_Culturas_Medicoes_Editar frame = new Admin_Gestao_Culturas_Medicoes_Editar();
-					frame.setVisible(true);
+					this.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
-	public Admin_Gestao_Culturas_Medicoes_Editar() {
+	public Admin_Gestao_Culturas_Medicoes_Editar(Administrador admin, DefaultListModel<String> listaMedicoes, String c, String v) {
+		this.admin = admin;
+		if (v.equals("   ")) {
+			this.v = "Nenhuma Variável Selecionada";
+		} else {
+			this.v = v;
+		}
+		if (c.equals("   ")) {
+			this.c = "Nenhuma Cultura Selecionada";
+		} else {
+			this.c = c;
+		}
+		
+		this.listaMedicoes = listaMedicoes;
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 500, 500);
 		contentPane = new JPanel();
@@ -48,11 +57,6 @@ public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-
-		JLabel lblMedicao = new JLabel("Medicao");
-		lblMedicao.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblMedicao.setBounds(69, 72, 99, 17);
-		contentPane.add(lblMedicao);
 
 		JLabel lblCultura = new JLabel("Cultura");
 		lblCultura.setFont(new Font("Tahoma", Font.PLAIN, 14));
@@ -64,20 +68,15 @@ public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 		lblVariavel.setBounds(69, 128, 99, 17);
 		contentPane.add(lblVariavel);
 
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(191, 72, 139, 20);
-		contentPane.add(textField_1);
+		JLabel lblnomecultura = new JLabel(this.c);
+		lblnomecultura.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblnomecultura.setBounds(191, 100, 139, 20);
+		contentPane.add(lblnomecultura);
 
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(191, 100, 139, 20);
-		contentPane.add(textField_2);
-
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(191, 128, 139, 20);
-		contentPane.add(textField_3);
+		JLabel lblnomevariavel = new JLabel(this.v);
+		lblnomevariavel.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblnomevariavel.setBounds(191, 128, 139, 20);
+		contentPane.add(lblnomevariavel);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
@@ -85,16 +84,31 @@ public class Admin_Gestao_Culturas_Medicoes_Editar extends JFrame {
 		scrollPane.setBounds(69, 186, 370, 189);
 		contentPane.add(scrollPane);
 
-		JList list = new JList();
+		JList<String> list = new JList<String>(listaMedicoes);
 		scrollPane.setViewportView(list);
 
 		JButton btnApagar = new JButton("Apagar");
 		btnApagar.setBounds(350, 400, 89, 23);
 		contentPane.add(btnApagar);
+		btnApagar.addActionListener(new ActionListener() {
 
-		JButton btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(69, 400, 89, 23);
-		contentPane.add(btnGuardar);
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				admin.apagaMedicao(list.getSelectedIndex());
+				listaMedicoes.clear();
+				atualizaListaMedicoes();
+			}
+		});
+
+	}
+
+	private void atualizaListaMedicoes() {
+		for (Medicoes val : admin.lista) {
+			listaMedicoes.addElement(Integer.toString(val.getNumero_medicao()) + "    " + val.getData().toString()
+					+ "    " + Integer.toString(val.getValor_medicao()) + "    " + Integer.toString(val.getId_cultura())
+					+ "    " + Integer.toString(val.getId_variavel()));
+
+		}
 	}
 
 }

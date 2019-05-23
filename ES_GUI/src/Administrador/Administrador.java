@@ -1,17 +1,21 @@
 package Administrador;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import Investigador.Cultura;
+import Investigador.Medicoes;
 
 public class Administrador {
 	private String username;
 	private String password;
 	private String email;
+	public ArrayList<Medicoes> lista = new ArrayList<Medicoes>();
 
 	public Administrador(String username, String password, Connection con) {
 		this.username = username;
@@ -40,6 +44,7 @@ public class Administrador {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -53,7 +58,7 @@ public class Administrador {
 		try {
 			Connection con = criacon();
 			Statement st = con.createStatement();
-			String query = "SELECT * FROM variaveis_medidas WHERE id_variavel = '" + i + "'"; 
+			String query = "SELECT * FROM variaveis_medidas WHERE id_variavel = '" + i + "'";
 			ResultSet rs = st.executeQuery(query);
 			while (rs.next()) {
 				if (!rs.wasNull()) {
@@ -171,7 +176,7 @@ public class Administrador {
 				this.username, this.password);
 		return con;
 	}
-	
+
 	public Connection criaconRoot() throws SQLException, ClassNotFoundException {
 		Connection con = null;
 		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -191,6 +196,7 @@ public class Administrador {
 			e.printStackTrace();
 		}
 	}
+
 	public void executaUpdateRoot(String query) {
 		try {
 			Connection con = criaconRoot();
@@ -201,7 +207,7 @@ public class Administrador {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void executaQuery(String query) {
 		try {
 			Connection con = criacon();
@@ -265,8 +271,8 @@ public class Administrador {
 		}
 		return variaveis;
 	}
-	
-	public String findHash(String query,String password) {
+
+	public String findHash(String query, String password) {
 		String hash = null;
 		try {
 			Connection con2 = criaconRoot();
@@ -274,19 +280,68 @@ public class Administrador {
 			ResultSet rs2 = st2.executeQuery(query);
 
 			while (rs2.next()) {
-				if (!rs2.wasNull()) {					
+				if (!rs2.wasNull()) {
 					hash = rs2.getString("PASSWORD('" + password + "')");
 				}
-			}			
+			}
 			con2.close();
-			} catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return hash;
-		
+
 	}
-	
+
+	public ArrayList<String> procuraIdCultura(String s) {
+		ArrayList<String> listaProcurada = new ArrayList<String>();
+		int idProcura = Integer.parseInt(s);
+		for (Medicoes m : lista) {
+			if (m.getId_cultura() == idProcura) {
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getData().toString() + "    "
+						+ Integer.toString(m.getId_cultura()) + "    " + Integer.toString(m.getId_variavel()));
+			}
+		}
+		return listaProcurada;
+	}
+
+	public void apagaMedicao(int i) {
+		try {
+			Connection con2 = criacon();
+			String query = "DELETE FROM medicoes WHERE numero_medicao = '" + lista.get(i).getNumero_medicao() + "'";
+			executaUpdate(query);
+			lista.clear();
+			procuraMedicoes(con2);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public ArrayList<String> procura(String i, String v) {
+		ArrayList<String> listaProcurada = new ArrayList<String>();
+		int idProcura = Integer.parseInt(i);
+		int variavelProcura = Integer.parseInt(v);
+		for (Medicoes m : lista) {
+			if (m.getId_cultura() == idProcura && m.getId_variavel() == variavelProcura) {
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getData().toString() + "    "
+						+ Integer.toString(m.getId_cultura()) + "    " + Integer.toString(m.getId_variavel()));
+			}
+		}
+		return listaProcurada;
+	}
+
+	public ArrayList<String> procuraVariavel(String i) {
+		ArrayList<String> listaProcurada = new ArrayList<String>();
+		int idProcura = Integer.parseInt(i);
+		for (Medicoes m : lista) {
+			if (m.getId_variavel() == idProcura) {
+				listaProcurada.add(Integer.toString(m.getNumero_medicao()) + "    " + m.getData().toString() + "    "
+						+ Integer.toString(m.getId_cultura()) + "    " + Integer.toString(m.getId_variavel()));
+			}
+		}
+		return listaProcurada;
+	}
+
 	public int procuraNomeCultura(String i) {
 		int id_cultura = 0;
 		Connection con3;
@@ -297,17 +352,17 @@ public class Administrador {
 			ResultSet rs2 = st2.executeQuery(query);
 			while (rs2.next()) {
 				if (!rs2.wasNull()) {
-					id_cultura = rs2.getInt("id_cultura");				
+					id_cultura = rs2.getInt("id_cultura");
 				}
 			}
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return id_cultura;
 
 	}
-	
+
 	public int devolveUltimaCultura() {
 		String query = "SELECT id_cultura FROM cultura ORDER BY id_cultura DESC LIMIT 1";
 		int id_cultura = 0;
@@ -317,13 +372,57 @@ public class Administrador {
 			ResultSet rs2 = st2.executeQuery(query);
 			while (rs2.next()) {
 				if (!rs2.wasNull()) {
-					id_cultura = rs2.getInt("id_cultura");				
+					id_cultura = rs2.getInt("id_cultura");
 				}
 			}
-		}catch (ClassNotFoundException | SQLException e) {
+		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
 		}
 		return id_cultura;
+	}
+
+	public void insereMedicao(Medicoes m) {
+		try {
+			Connection con2 = criacon();
+			String text = new SimpleDateFormat("yyyy,MM,dd HH,mm,dd").format(m.getData());
+			String query = "INSERT INTO `medicoes`(`numero_medicao`, `data_hora_medicao`, `valor_medicao`, `id_cultura`, `id_variavel`) "
+					+ " VALUES (" + m.getNumero_medicao() + " , str_to_date('" + text + "', '%Y,%m,%d %H,%i,%S') , "
+					+ m.getValor_medicao() + " , " + m.getId_cultura() + " , " + m.getId_variavel() + ")";
+			executaUpdate(query);
+			lista.clear();
+			procuraMedicoes(con2);
+			con2.close();
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void procuraMedicoes(Connection con) {
+		try {
+			if (!lista.isEmpty()) {
+				lista.clear();
+			}
+			Statement st2 = con.createStatement();
+			for (Cultura c : culturas()) {
+				String query = "SELECT * FROM medicoes WHERE id_cultura = " + c.getId_cultura();
+				ResultSet rs2 = st2.executeQuery(query);
+				while (rs2.next()) {
+					if (!rs2.wasNull()) {
+						int numero = rs2.getInt("numero_medicao");
+						Date data = rs2.getDate("data_hora_medicao");
+						int valor_medicao = rs2.getInt("valor_medicao");
+						int idcultura = rs2.getInt("id_cultura");
+						int idvariavel = rs2.getInt("id_variavel");
+
+						lista.add(new Medicoes(numero, data, valor_medicao, idcultura, idvariavel));
+					}
+				}
+
+			}
+			con.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

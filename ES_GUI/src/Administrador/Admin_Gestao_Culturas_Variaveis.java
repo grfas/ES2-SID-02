@@ -112,10 +112,6 @@ public class Admin_Gestao_Culturas_Variaveis extends JFrame {
 		btnCriarVariavel.setBounds(194, 228, 112, 31);
 		contentPane.add(btnCriarVariavel);
 
-		JButton btnGuardar = new JButton("Guardar");
-		btnGuardar.setBounds(34, 427, 89, 23);
-		contentPane.add(btnGuardar);
-
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);

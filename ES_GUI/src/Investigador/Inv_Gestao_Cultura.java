@@ -159,7 +159,6 @@ public class Inv_Gestao_Cultura extends JFrame {
 				try {
 					int c = Integer.parseInt((String) comboBox.getSelectedItem());
 					int v = Integer.parseInt((String) comboBox_1.getSelectedItem());
-					;
 					int valor = Integer.parseInt(textField.getText());
 					String tempo = textField_1.getText();
 					DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
